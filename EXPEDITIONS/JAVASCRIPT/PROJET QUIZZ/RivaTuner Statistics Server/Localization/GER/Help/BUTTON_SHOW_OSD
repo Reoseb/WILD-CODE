@@ -1,0 +1,5 @@
+Zeige On-Screen-Display
+Kontrolliert global die Sichtbarkeit des On-Screen-Displays. Benutzen Sie diese Option, um das On-Screen-Display zu verstecken ohne die Profile zu verändern. Die Client-Anwendungen können diese Option auch entfernt über einen Hotkey kontrollieren.
+
+Hinweise:
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

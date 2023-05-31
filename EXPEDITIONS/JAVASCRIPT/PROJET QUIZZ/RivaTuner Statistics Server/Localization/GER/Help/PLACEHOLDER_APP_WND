@@ -1,0 +1,7 @@
+Anwendungsprofil-Liste
+Zeigt die Anwendungsprofil-Liste an und erlaubt Ihnen die Verwaltung der Profile.
+Das Anwendungsprofil-Konzept bietet Ihnen einen flexiblen Weg, Ihre persönlichen Einstellungen für jede Anwendung zu definieren. Es gibt keinen Grund für jede einzelne Anwendung ein Profil zu erstellen: Alle Anwendungen, die nicht in der Profil-Liste stehen, werden automatisch das globale Profil nutzen. Fügen Sie neue Profile nur hinzu, falls es nötig ist, einige persönliche Einstellungen, wie z.B. das Deaktivieren des On-Screen-Displays, wegen eines Anticheat-Systems, oder das Ändern der On-Screen-Display-Farbe oder -Position, wegen des im Spiel eingebauten Head-Up-Displays, für spezifische Anwendungen zu definieren. Anderenfalls sollten Sie nur das globale Profil editieren.
+
+Hinweise:
+- Voreingestellte Profile können nicht entfernt werden. Sie können nur Profile entfernen, die Sie erstellt haben.
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

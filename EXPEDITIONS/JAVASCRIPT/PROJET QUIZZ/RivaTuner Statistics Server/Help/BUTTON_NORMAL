@@ -1,0 +1,7 @@
+Application detection level : normal
+Selects normal detection level for the application associated with the current profile. In this mode %PRODUCTNAME% intercepts application's calls to Direct3D and OpenGL runtime libraries. 
+This mode is recommended for collecting runtime statistics, such as framerate, and enabling additional services, such as On-Screen Display, in the majority of modern 3D applications.
+
+Hints:
+- Some protected applications may treat application detection and statistics collection as possible threat and may refuse to run due to this reason. Try to decrease detection level for such applications to troubleshoot such issues.
+- You may disable user interface tooltips via advanced %PRODUCTNAME% settings.

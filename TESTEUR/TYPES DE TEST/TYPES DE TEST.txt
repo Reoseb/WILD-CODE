@@ -1,0 +1,20 @@
+AGILE : QUALITE A TOUT MOMENT 
+ELABORATION SPECIFICATION (NOUVELLES FONCTIONNALITES ET AVIS SUR LE PRODUIT)
+
+COMMUNQIUER DETECTER ANOMALIES ANALYSER AUTOMATISER
+
+TYPES DE TEST
+Non fonctionnel : performance, sécurité
+Fonctionnel : compo  
+
+BOITE BLANCHE : Vérifier la structure interne et comment le résultat est obtenu
+
+BOITE NOIRE : Vérifier le résultat obtenu
+
+Non régression : Vérifier que les fonctionnaltés ajoutées n'impactent pas les anciennes
+Tests unitaires
+Tests d'intégration
+E2E : 
+Tests exploratoires
+Tests scriptés
+Test acceptation

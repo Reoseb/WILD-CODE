@@ -1,0 +1,6 @@
+On-Screen-Display-Y-Koordinate
+Zeigt die On-Screen-Display-Y-Koordinate in Verbindung mit der Ursprungsecke. Klicken Sie dieses Feld an, um die gewünschte Position manuell anzugeben, oder benutzen Sie die angrenzenden Knöpfe, um die Koordinate zu erhöhen oder zu verringern. Benutzen Sie das On-Screen-Display-Vorschaufenster zur visuellen Kontrolle des On-Screen-Display-Erscheinungsbildes, während Sie die Position justieren.
+
+Hinweise:
+- Anticheat-Systeme von einigen Spielen können das Einhaken in den Spielcode, das für die Anwendungserkennung und das Rendern des On-Screen-Displays nötig ist, als möglichen Cheat erkennen und die Verbindung zu Multiplayer-Servern verweigern. Um dieses Problem zu lösen, kann ein Profil für das Spiel erstellt werden und die Unterstützung für das On-Screen-Display deaktiviert werden. Versuchen Sie das Anwendungserkennungs-Level zu verringern, falls das nicht hilft.
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

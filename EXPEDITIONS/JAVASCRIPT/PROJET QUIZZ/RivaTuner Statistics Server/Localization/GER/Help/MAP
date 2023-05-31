@@ -1,0 +1,12 @@
+[MAP]
+
+; Properties \ General tab
+
+ID_1019 = Properties\General\START_MINIMIZED
+
+; Properties \ User interface tab
+
+ID_1038 = Properties\User interface\LANGUAGE_COMBO
+ID_1011 = Properties\User interface\SHOW_TOOLTIPS
+ID_1109 = Properties\User interface\SKIN_PREVIEW
+ID_1023 = Properties\User interface\SKINS_COMBO

@@ -1,0 +1,6 @@
+Kompatibilität mit modifizierten Direct3D-Laufzeitbibliotheken aktivieren
+Standardmäßig unterstützt %PRODUCTNAME% nur Direct3D-Anwendungen, die native Microsoft Direct3D-Laufzeitbibliotheken benutzen. Sie können diese Option aktivieren, um die Anwendung mit Direct3D-Anwendungen, die modifizierte Direct3D-Proxy-Laufzeitbibliotheken (z.B. InjectFXAA) verwenden, kompatibel zu machen.
+Diese Option ist profilspezifisch. Sie können sie unabhängig für verschiedene Anwendungen konfigurieren. Es wird nicht empfohlen, diese Option global zu aktivieren, da sie bei einigen Direct3D-Anwendungen das Starten verhindern kann.
+
+Hinweise:
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

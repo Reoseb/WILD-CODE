@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst Skin %s wurde erfolgreich kompiliert!
+#end
+#src Failed to compile %s skin!
+#dst Konnte Skin %s nicht kompilieren!
+#end
+#src %s skin has been successfully decompiled!
+#dst Skin %s wurde erfolgreich dekompiliert!
+#end
+#src Failed to decompile %s skin!
+#dst Konnte Skin %s nicht dekompilieren!
+#end
+#src Failed to load %s skin!
+#dst Konnte Skin %s nicht laden!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Einige %PRODUCTNAME%-Komponenten fehlen, sind veraltet oder sind beschädigt!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Konnte Skin %s nicht laden! Benutze Standard-Skin!
+#end
+#src Unsupported %s skin file format!
+#dst Nicht unterstützter Skin %s: Falsches Dateiformat!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Konnte Hauptfenster nicht mit Skin %s initialisieren! Benutze Standard-Skin!
+#end
+#src Failed to initialize main window!
+#dst Konnte Hauptfenster nicht initialisieren!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst Kompiliert am %d-%m-%Y um %H:%M:%S
+#end
+#src expires on %s
+#dst Läuft ab am %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Konnte die RTSSHooks.dll-Bibliothek nicht laden! 
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Hinweis: %PRODUCTNAME% ist momentan in den Infobereich minimiert. Sie können auf das Symbol klicken um %PRODUCTNAME% im Fenstermodus aufzurufen.
+#end
+#src Failed to restore main window DIB cache!
+#dst Konnte Hauptfenster-DIB-Cache nicht wiederherstellen!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst CTaskSchedulerInterface::%s ist mit Fehlercode %d fehlgeschlagen!
+#end
+#src %PRODUCTNAME% properties
+#dst %PRODUCTNAME%-Eigenschaften
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Eine Kopie der Resource-Datei wurde erfolgreich gespeichert in: %s
+#end
+#src Failed to save resource file copy to %s!
+#dst Fehler beim Speichern der Resource-Datei-Kopie nach: %s
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Ausführbare Dateien (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Bitmap-Dateien (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Es ist keine neuere Version zu diesem Zeitpunkt verfügbar. Die momentan installierte Version ist up to date.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s ist als Download verfügbar. Wollen Sie die Downloadseite jetzt öffnen?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Kann keine Update-Informationen vom Update-Server abrufen!
+#end
+#src Cannot establish connection with the update server!
+#dst Kann keine Verbindung mit dem Update-Server aufbauen!
+#end
+#src cannot open internet connection
+#dst Kann keine Internet-Verbindung aufbauen
+#end
+#src cannot open server connection
+#dst Serververbindung kann nicht geöffnet werden
+#end
+#src cannot open HTTP request
+#dst HTTP-Anfrage kann nicht geöffnet werden
+#end
+#src cannot send HTTP request
+#dst HTTP-Anfrage kann nicht gesendet werden
+#end
+#src cannot query HTTP info
+#dst HTTP-Info kann nicht abgefragt werden
+#end
+#src proxy authentification required
+#dst Proxy-Authentifizierung erforderlich
+#end
+#src cannot read file
+#dst Kann Datei nicht lesen
+#end
+#src unknown reason %d
+#dst Ungekannter Grund
+#end
+#src Reason : %s, error code %d
+#dst Grund : %s, Fehlercode %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Zuletzt überprüft am %d.%m.%Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst Ein Neustart ist erforderlich, um die %PRODUCTNAME% Installation abzuschließen!
+#end

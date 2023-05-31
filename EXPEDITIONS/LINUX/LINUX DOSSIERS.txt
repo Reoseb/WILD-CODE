@@ -1,0 +1,516 @@
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls documents/quests
+shell/
+
+RéoSeb@REOZONDE MINGW64 ~
+$ history
+    1  pwd
+    2  cd ..
+    3  pwd
+    4  cd..
+    5  cd ..
+    6  ls
+    7  cd  games
+    8  cd ..
+    9  mkdir quests
+   10  mkdir -p quests/shell/vegetables quests/shell/fruits
+   11  mkdir quests/shell/remove-me quests/shell/delete-me
+   12  mkdir quests/shell/remove-me quests/shell/delete-me
+   13  cd ~/quests/shell
+   14  touch apple
+   15  touch apricot
+   16  touch carrot parsnip cauliflower courgette
+   17  lsls
+   18  s
+   19  ls -l ~/.bashrc
+   20  touch ~/.bashrc
+   21  ls -l ~/.bashrc
+   22  cp apple banana
+   23  cp apple fruits/orange
+   24  ls ; ls fruitscp -R fruits copy-of-fruits /tmp/
+   25  ls
+   26  cp -R fruits copy-of-fruits
+   27  ls quests/shell
+   28  cd ~/quests/shell
+   29  touch apple
+   30  touch apricot
+   31  touch carrot parsnip cauliflower courgette
+   32   ls quests/shell
+   33  cp -R fruits copy-of-fruits
+   34  cp -R fruits
+   35  cp -R fruits fruits
+   36   ls quests/shell
+   37  cp -R fruits fruits
+   38   ls quests/shell
+   39  cp -R fruits copy-of-fruits/
+   40   ls quests/shell
+   41  cp -R fruits fruits/
+   42   ls quests/shell
+   43  curl -L -o planets.zip "https://github.com/WildCodeSchool/quests-resources/blob/master/terminal/planets.zip?raw=true"
+   44  unzip planets.z
+   45   ls quests/shell
+   46  curl -L -o planets.zip "https://github.com/WildCodeSchool/quests-resources/blob/master/terminal/planets.zip?raw=true"
+   47   ls quests/shell
+   48   ls user
+   49  ls
+   50  cd documents
+   51  mkdir quests
+   52  mkdir -p quests/shell/vegetables quests/shell/fruits
+   53  mkdir quests/shell/remove-me quests/shell/delete-me
+   54  ls quests/shell
+   55  rmdir quests/shell/remove-me quests/shell/delete-me
+   56  cd ~/quests/shell
+   57  touch apple
+   58  touch apricot
+   59  touch carrot parsnip cauliflower courgette
+   60  ls
+   61  ls -l ~/.bashrc
+   62  touch ~/.bashrc
+   63  ls -l ~/.bashrc
+   64  cp apple banana
+   65  cp apple fruits/orange
+   66  ls ; ls fruits
+   67  ls quests/shell
+   68  cp apple banana
+   69  cp apple fruits/orange
+   70  ls ; ls fruits
+   71  ls quests/shell
+   72  cp apple banana
+   73  cp apple fruits/orange
+   74  ls ; ls fruits
+   75  ls quests/shell/fruits/
+   76  ls
+   77  ls quests/shell
+   78  cd fruits
+   79  cd quests/shell/fruits/
+   80  cp apple banana
+   81  cp apple fruits/orange
+   82  ls ; ls fruits
+   83  cp ap* banana fruits/
+   84  cd
+   85  ls quests
+   86  ls
+   87  $ cd documents
+   88  cd documents
+   89  cd quests/shell/fruits/
+   90  cp ap* banana fruits/
+   91  cd documents
+   92  ls documents
+   93  ls
+   94  cd
+   95  ls documents
+   96  cp ap* banana fruits/
+   97  ls fruits
+   98  cd quests/shell
+   99  ls quests/shell
+  100  cd
+  101  ls quests/shell
+  102  ls documents
+  103  ls quests/shell
+  104  ls documents
+  105  ls quests
+  106  ls quests
+  107  cd quests/shell
+  108  ls documents
+  109  cd documents/quests/shell
+  110  ls documents/quests/shell
+  111  ls documents/quests/shell
+  112  ls documents/quests/
+  113  cd quests/shell
+  114  ls documents/quests
+  115  ls
+  116  cp ap* banana fruits/
+  117  ls fruits
+  118  ls documents/quests
+  119  history
+
+RéoSeb@REOZONDE MINGW64 ~
+$ cp apple banana
+
+cp apple fruits/orange
+
+ls ; ls fruits
+cp: cannot stat 'apple': No such file or directory
+cp: cannot stat 'apple': No such file or directory
+ -1.14-windows.xml
+'3D Objects'/
+ AppData/
+'Application Data'@
+ Contacts/
+ Cookies@
+ Desktop/
+ Documents/
+ Downloads/
+ Favorites/
+ IntelGraphicsProfiles/
+ Links/
+'Local Settings'@
+'Menu Démarrer'@
+'Mes documents'@
+ Modèles@
+ Music/
+ NTUSER.DAT
+ NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf
+ NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms
+ Nox_share/
+ OneDrive/
+ Pictures/
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+ Videos/
+"Voisinage d'impression"@
+'Voisinage réseau'@
+ ansel/
+ d4ac4633ebd6440fa397b84f1bc94a3c.7z
+ inittk.ini
+ inst.ini
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ ntuser.ini
+ nuuid.ini
+ useruid.ini
+ vmlogs/
+ls: cannot access 'fruits': No such file or directory
+
+RéoSeb@REOZONDE MINGW64 ~
+$ pwd
+/c/Users/RéoSeb
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls
+ -1.14-windows.xml       'Mes documents'@                                                                                Videos/
+'3D Objects'/             Modèles@                                                                                      "Voisinage d'impression"@
+ AppData/                 Music/                                                                                        'Voisinage réseau'@
+'Application Data'@       NTUSER.DAT                                                                                     ansel/
+ Contacts/                NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf                                        d4ac4633ebd6440fa397b84f1bc94a3c.7z
+ Cookies@                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms   inittk.ini
+ Desktop/                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms   inst.ini
+ Documents/               Nox_share/                                                                                     ntuser.dat.LOG1
+ Downloads/               OneDrive/                                                                                      ntuser.dat.LOG2
+ Favorites/               Pictures/                                                                                      ntuser.ini
+ IntelGraphicsProfiles/   Recent@                                                                                        nuuid.ini
+ Links/                  'Saved Games'/                                                                                  useruid.ini
+'Local Settings'@         Searches/                                                                                      vmlogs/
+'Menu Démarrer'@          SendTo@
+
+RéoSeb@REOZONDE MINGW64 ~
+$ cd ~
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls
+ -1.14-windows.xml       'Mes documents'@                                                                                Videos/
+'3D Objects'/             Modèles@                                                                                      "Voisinage d'impression"@
+ AppData/                 Music/                                                                                        'Voisinage réseau'@
+'Application Data'@       NTUSER.DAT                                                                                     ansel/
+ Contacts/                NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf                                        d4ac4633ebd6440fa397b84f1bc94a3c.7z
+ Cookies@                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms   inittk.ini
+ Desktop/                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms   inst.ini
+ Documents/               Nox_share/                                                                                     ntuser.dat.LOG1
+ Downloads/               OneDrive/                                                                                      ntuser.dat.LOG2
+ Favorites/               Pictures/                                                                                      ntuser.ini
+ IntelGraphicsProfiles/   Recent@                                                                                        nuuid.ini
+ Links/                  'Saved Games'/                                                                                  useruid.ini
+'Local Settings'@         Searches/                                                                                      vmlogs/
+'Menu Démarrer'@          SendTo@
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls -al
+total 10451
+-rw-r--r-- 1 RéoSeb 197121    6879 Sep 19  2021  -1.14-windows.xml
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 16:18  ./
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 07:21  ../
+drwxr-xr-x 1 RéoSeb 197121       0 Aug 13  2022  .android/
+-rw-r--r-- 1 RéoSeb 197121    2290 Apr  4 17:37  .bash_history
+-rw-r--r-- 1 RéoSeb 197121      99 Apr  4 16:18  .bash_profile
+-rw-r--r-- 1 RéoSeb 197121       0 Apr  4 16:55  .bashrc
+drwxr-xr-x 1 RéoSeb 197121       0 Sep 18  2021  .obs64/
+drwxr-xr-x 1 RéoSeb 197121       0 Sep 22  2021  .swt/
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 08:43  .wdc/
+drwxr-xr-x 1 RéoSeb 197121       0 Sep  8  2021 '3D Objects'/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:30  AppData/
+lrwxrwxrwx 1 RéoSeb 197121      32 Dec 16 07:21 'Application Data' -> /c/Users/RéoSeb/AppData/Roaming/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:34  Contacts/
+lrwxrwxrwx 1 RéoSeb 197121      60 Dec 16 07:21  Cookies -> /c/Users/RéoSeb/AppData/Local/Microsoft/Windows/INetCookies/
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 17:37  Desktop/
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 16:56  Documents/
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 14:04  Downloads/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:34  Favorites/
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 08:42  IntelGraphicsProfiles/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:34  Links/
+lrwxrwxrwx 1 RéoSeb 197121      30 Dec 16 07:21 'Local Settings' -> /c/Users/RéoSeb/AppData/Local/
+lrwxrwxrwx 1 RéoSeb 197121      61 Dec 16 07:21 'Menu Démarrer' -> '/c/Users/RéoSeb/AppData/Roaming/Microsoft/Windows/Start Menu'/
+lrwxrwxrwx 1 RéoSeb 197121      26 Dec 16 07:21 'Mes documents' -> /c/Users/RéoSeb/Documents/
+lrwxrwxrwx 1 RéoSeb 197121      60 Dec 16 07:21  Modèles -> /c/Users/RéoSeb/AppData/Roaming/Microsoft/Windows/Templates/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:34  Music/
+-rw-r--r-- 1 RéoSeb 197121 7077888 Apr  3 23:28  NTUSER.DAT
+-rw-r--r-- 1 RéoSeb 197121   65536 Dec 16 07:21  NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf
+-rw-r--r-- 1 RéoSeb 197121  524288 Dec 16 07:21  NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms
+-rw-r--r-- 1 RéoSeb 197121  524288 Dec 16 07:21  NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms
+drwxr-xr-x 1 RéoSeb 197121       0 Aug 13  2022  Nox_share/
+drwxr-xr-x 1 RéoSeb 197121       0 May 23  2022  OneDrive/
+drwxr-xr-x 1 RéoSeb 197121       0 Feb 20 16:12  Pictures/
+lrwxrwxrwx 1 RéoSeb 197121      57 Dec 16 07:21  Recent -> /c/Users/RéoSeb/AppData/Roaming/Microsoft/Windows/Recent/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:34 'Saved Games'/
+drwxr-xr-x 1 RéoSeb 197121       0 Dec 16 11:34  Searches/
+lrwxrwxrwx 1 RéoSeb 197121      57 Dec 16 07:21  SendTo -> /c/Users/RéoSeb/AppData/Roaming/Microsoft/Windows/SendTo/
+drwxr-xr-x 1 RéoSeb 197121       0 Apr  4 08:43  Videos/
+lrwxrwxrwx 1 RéoSeb 197121      68 Dec 16 07:21 "Voisinage d'impression" -> '/c/Users/RéoSeb/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'/
+lrwxrwxrwx 1 RéoSeb 197121      68 Dec 16 07:21 'Voisinage réseau' -> '/c/Users/RéoSeb/AppData/Roaming/Microsoft/Windows/Network Shortcuts'/
+drwxr-xr-x 1 RéoSeb 197121       0 Oct 28  2021  ansel/
+-rw-r--r-- 1 RéoSeb 197121     295 Aug 13  2022  d4ac4633ebd6440fa397b84f1bc94a3c.7z
+-rw-r--r-- 1 RéoSeb 197121      66 Aug 13  2022  inittk.ini
+-rw-r--r-- 1 RéoSeb 197121      41 Aug 13  2022  inst.ini
+-rw-r--r-- 1 RéoSeb 197121 1814528 Dec 16 07:21  ntuser.dat.LOG1
+-rw-r--r-- 1 RéoSeb 197121  393216 Dec 16 07:21  ntuser.dat.LOG2
+-rw-r--r-- 1 RéoSeb 197121      20 Dec 16 11:34  ntuser.ini
+-rw-r--r-- 1 RéoSeb 197121      45 Aug 13  2022  nuuid.ini
+-rw-r--r-- 1 RéoSeb 197121      53 Aug 13  2022  useruid.ini
+drwxr-xr-x 1 RéoSeb 197121       0 Aug 13  2022  vmlogs/
+
+RéoSeb@REOZONDE MINGW64 ~
+$ cd documents/quests
+
+RéoSeb@REOZONDE MINGW64 ~/documents/quests
+$ ls
+shell/
+
+RéoSeb@REOZONDE MINGW64 ~/documents/quests
+$ cd shell
+
+RéoSeb@REOZONDE MINGW64 ~/documents/quests/shell
+$ ls
+fruits/  vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/documents/quests/shell
+$  cd ~
+
+RéoSeb@REOZONDE MINGW64 ~
+$ mkdir -p quests/shell
+
+RéoSeb@REOZONDE MINGW64 ~
+$ mv Mes\ documents/ap
+apple    apricot
+
+RéoSeb@REOZONDE MINGW64 ~
+$ mv Mes\ documents/apple ~/quests/shell/
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls
+ -1.14-windows.xml       'Mes documents'@                                                                                Videos/
+'3D Objects'/             Modèles@                                                                                      "Voisinage d'impression"@
+ AppData/                 Music/                                                                                        'Voisinage réseau'@
+'Application Data'@       NTUSER.DAT                                                                                     ansel/
+ Contacts/                NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf                                        d4ac4633ebd6440fa397b84f1bc94a3c.7z
+ Cookies@                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms   inittk.ini
+ Desktop/                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms   inst.ini
+ Documents/               Nox_share/                                                                                     ntuser.dat.LOG1
+ Downloads/               OneDrive/                                                                                      ntuser.dat.LOG2
+ Favorites/               Pictures/                                                                                      ntuser.ini
+ IntelGraphicsProfiles/   Recent@                                                                                        nuuid.ini
+ Links/                  'Saved Games'/                                                                                  quests/
+'Local Settings'@         Searches/                                                                                      useruid.ini
+'Menu Démarrer'@          SendTo@                                                                                        vmlogs/
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls quests/shell
+apple
+
+RéoSeb@REOZONDE MINGW64 ~
+$ man mv
+bash: man: command not found
+
+RéoSeb@REOZONDE MINGW64 ~
+$ mv -R Mes\ documents/quests/* ~/quests/
+mv: unknown option -- R
+Try 'mv --help' for more information.
+
+RéoSeb@REOZONDE MINGW64 ~
+$ mv -r Mes\ documents/quests/* ~/quests/
+mv: unknown option -- r
+Try 'mv --help' for more information.
+
+RéoSeb@REOZONDE MINGW64 ~
+$ cp -R Mes\ documents/quests/* ~/quests/
+
+RéoSeb@REOZONDE MINGW64 ~
+$ rm -R  Mes\ documents/quests
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ^[[200~cd ~/quests/shell
+touch carrot parsnip cauliflower courgette
+bash: $'\E[200~cd': command not found
+ls
+RéoSeb@REOZONDE MINGW64 ~
+$ touch apple
+
+RéoSeb@REOZONDE MINGW64 ~
+$ touch apricot
+
+RéoSeb@REOZONDE MINGW64 ~
+$ touch carrot parsnip cauliflower courgette
+
+RéoSeb@REOZONDE MINGW64 ~
+$ ls
+ -1.14-windows.xml        Music/                                                                                         apple
+'3D Objects'/             NTUSER.DAT                                                                                     apricot
+ AppData/                 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf                                        carrot
+'Application Data'@       NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms   cauliflower
+ Contacts/                NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms   courgette
+ Cookies@                 Nox_share/                                                                                     d4ac4633ebd6440fa397b84f1bc94a3c.7z
+ Desktop/                 OneDrive/                                                                                      inittk.ini
+ Documents/               Pictures/                                                                                      inst.ini
+ Downloads/               Recent@                                                                                        ntuser.dat.LOG1
+ Favorites/              'Saved Games'/                                                                                  ntuser.dat.LOG2
+ IntelGraphicsProfiles/   Searches/                                                                                      ntuser.ini
+ Links/                   SendTo@                                                                                        nuuid.ini
+'Local Settings'@         Videos/                                                                                        parsnip
+'Menu Démarrer'@         "Voisinage d'impression"@                                                                       quests/
+'Mes documents'@         'Voisinage réseau'@                                                                             useruid.ini
+ Modèles@                 ansel/                                                                                         vmlogs/
+
+RéoSeb@REOZONDE MINGW64 ~
+$ rm ap
+AppData/          Application Data/ apple             apricot
+
+RéoSeb@REOZONDE MINGW64 ~
+$ rm app
+AppData/          Application Data/ apple
+
+RéoSeb@REOZONDE MINGW64 ~
+$ rm apple apricot carrot parsnip cauliflower courgette
+
+RéoSeb@REOZONDE MINGW64 ~
+$ cd quests/shell
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ touch apple apricot carrot parsnip cauliflower courgette
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls
+apple  apricot  carrot  cauliflower  courgette  fruits/  parsnip  vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ cp apple banana
+cp apple fruits/orange
+ls ; ls fruits
+apple  apricot  banana  carrot  cauliflower  courgette  fruits/  parsnip  vegetables/
+orange
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ cp ap* banana fruits/
+ls fruits
+apple  apricot  banana  orange
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ cp -R fruits copy-of-fruits
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls
+apple  apricot  banana  carrot  cauliflower  copy-of-fruits/  courgette  fruits/  parsnip  vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ cp -R fruits copy-of-fruits /tmp/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ rm ap* banana
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ rm -r copy-of-fruits
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ df -k
+Filesystem            1K-blocks      Used  Available Use% Mounted on
+C:/Program Files/Git  498930684 407299916   91630768  82% /
+D:                   1953479676  83596132 1869883544   5% /d
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ bdf
+bash: bdf: command not found
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls
+carrot  cauliflower  courgette  fruits/  parsnip  vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ mv ca* parsnip courgette vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls
+fruits/  vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ mv fruits/orange fruits/grapefruit
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls
+fruits/  vegetables/
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls fruits/
+apple  apricot  banana  grapefruit
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ mv vegetables/courgette fruits/kiwi
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls vegetables/ fruits/
+fruits/:
+apple  apricot  banana  grapefruit  kiwi
+
+vegetables/:
+carrot  cauliflower  parsnip
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls -l . fruits/ vegetables/
+.:
+total 4
+drwxr-xr-x 1 RéoSeb 197121 0 Apr  4 23:19 fruits/
+drwxr-xr-x 1 RéoSeb 197121 0 Apr  4 23:19 vegetables/
+
+fruits/:
+total 0
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 23:02 apple
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 23:02 apricot
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 23:02 banana
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:58 grapefruit
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 kiwi
+
+vegetables/:
+total 0
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 carrot
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 cauliflower
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 parsnip
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ ls -l . ; ls fruits/ ; ls -alrt vegetables/
+total 4
+drwxr-xr-x 1 RéoSeb 197121 0 Apr  4 23:19 fruits/
+drwxr-xr-x 1 RéoSeb 197121 0 Apr  4 23:19 vegetables/
+apple  apricot  banana  grapefruit  kiwi
+total 8
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 carrot
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 parsnip
+-rw-r--r-- 1 RéoSeb 197121 0 Apr  4 22:53 cauliflower
+drwxr-xr-x 1 RéoSeb 197121 0 Apr  4 23:16 ../
+drwxr-xr-x 1 RéoSeb 197121 0 Apr  4 23:19 ./
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$ curl -L -o planets.zip "https://github.com/WildCodeSchool/quests-resources/blob/master/terminal/planets.zip?raw=true"
+unzip planets.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+unzip:  cannot find or open planets.zip, planets.zip.zip or planets.zip.ZIP.
+
+RéoSeb@REOZONDE MINGW64 ~/quests/shell
+$

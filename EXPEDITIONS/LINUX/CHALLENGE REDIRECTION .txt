@@ -1,0 +1,31 @@
+Tuto pas très intuitif au niveau de la syntaxe :
+
+grep swedish Prenoms.csv > Swedish.csv
+grep "f;french" < Prenoms.csv | wc -l
+
+On sait pas si doit mettre des " " , ; ou des espaces pour trier plusieurs mots clés à la fois
+
+RéoSeb@REOZONDE MINGW64 ~
+$ cd ~/Documents/WILD\ CODE/
+
+RéoSeb@REOZONDE MINGW64 ~/Documents/WILD CODE
+$ grep "JavaScript" wilders.csv > ParcheminDecafecafe.csv
+
+RéoSeb@REOZONDE MINGW64 ~/Documents/WILD CODE
+$ grep "Toulouse" ParcheminDecafe.csv > VilleRose.csv
+
+RéoSeb@REOZONDE MINGW64 ~/Documents/WILD CODE
+$ grep "Biarritz" ParcheminDecafe.csv > SoChic.csv
+
+RéoSeb@REOZONDE MINGW64 ~/Documents/WILD CODE
+$ cat SoChic.csv VilleRose.csv > SudOuestenForce.csv | sort -u
+
+RéoSeb@REOZONDE MINGW64 ~/Documents/WILD CODE
+$ ls
+php_france_2019.csv
+VilleRose.csv        wilders.csv
+SudOuestenForce      SoChic.csv             ParcheminDecafe.csv
+
+Avez-vous une astuce trier plusieurs mots-clés dans une même commande 
+et réduire les fichiers .CSV intermédiaires svp ?
+Ou n'y avait-il pas d'autres alternatives ?

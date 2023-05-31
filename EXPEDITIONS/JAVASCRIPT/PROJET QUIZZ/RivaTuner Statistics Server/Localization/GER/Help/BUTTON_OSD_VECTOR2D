@@ -1,0 +1,7 @@
+On-Screen-Display: Vektor-2D-Rendering-Modus
+Das On-Screen-Display, egal ob mit Vektor- oder Rasterschriften, kann mit hardwarebeschleunigten 2D/3D-DirectX/OpenGL-Funktionen gerendert werden. Die 2D-Beschleunigungs-basierte Implementation bietet die maximale Kompatibilität mit den meisten der existierenden 3D-Spiel-Engines, allerdings ist sie in DirectX10 und neueren Spielen, wenn Multisampled Antialiasing aktiviert ist, nicht unterstützt. 2D-Beschleunigung kann außerdem in manchen Grafiktreibern schlecht optimiert sein, sodass die 3D-Beschleunigungs-basierte Implementation auf solchen Systemen sehr viel effektiver in Sachen Performance sein kann.
+Allerdings hat die 3D-Implementierung höhere Chancen inkompatibel mit manchen 3D-Spiel-Engines zu sein. Versuchen Sie den 3D-Modus zu deaktivieren, wenn Sie irgendwelche Rendering-Anomalien in einem Spiel feststellen, während Sie es mit aktiviertem OSD ausführen.
+
+Hinweise:
+- Anticheat-Systeme von einigen Spielen können das Einhaken in den Spielcode, das für die Anwendungserkennung und das Rendern des On-Screen-Displays nötig ist, als möglichen Cheat erkennen und die Verbindung zu Multiplayer-Servern verweigern. Um dieses Problem zu lösen, kann ein Profil für das Spiel erstellt werden und die Unterstützung für das On-Screen-Display deaktiviert werden. Versuchen Sie das Anwendungserkennungs-Level zu verringern, falls das nicht hilft.
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

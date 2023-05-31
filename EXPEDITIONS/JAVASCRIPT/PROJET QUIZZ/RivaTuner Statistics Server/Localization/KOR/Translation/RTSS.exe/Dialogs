@@ -1,0 +1,73 @@
+#src General
+#dst ÀÏ¹İ
+#end
+#src General properties
+#dst ÀÏ¹İ ¼³Á¤
+#end
+#src Start minimized
+#dst ÃÖ¼ÒÈ­ »óÅÂ·Î ½ÃÀÛ
+#end
+#src Update checking properties
+#dst _÷÷_ÀÌÆR __Á¤
+#end
+#src Check for available product updates
+#dst ÀÚ÷¿ _÷÷_ÀÌÆR __Á¤
+#end
+#src Check for available product beta versions
+#dst ÀÚ÷¿ _÷÷_ÀÌÆR¿¡ º_Å¸ ¹öÀü÷÷ Æ÷ÇÔ
+#end
+#src never
+#dst ÈRÀÎ _È ÇÔ
+#end
+#src on startup
+#dst _ÃÀÛÇÒ ¶§
+#end
+#src on startup daily
+#dst ¸ÅÀÏ
+#end
+#src on startup weekly
+#dst ¸ÅÁÖ
+#end
+#src on startup monthly
+#dst ¸Å_Ş
+#end
+#src Check now
+#dst Áö+İ ÈRÀÎ
+#end
+#src FCAT properties
+#dst
+#end
+#src Enable frame color indicator
+#dst
+#end
+#src color sequence
+#dst
+#end
+#src 2 bars
+#dst
+#end
+#src 3 bars
+#dst
+#end
+#src 4 bars
+#dst
+#end
+
+#src User Interface
+#dst »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½º
+#end
+#src User interface help system properties
+#dst »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½º µµ¿ò¸» ¼³Á¤
+#end
+#src English
+#dst ¿µ¾î
+#end
+#src Language
+#dst ¾ğ¾î
+#end
+#src Show user interface tooltips
+#dst »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½º ÅøÆÁ º¸±â
+#end
+#src User interface skinning properties
+#dst »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½º ½ºÅ² ¼³Á¤
+#end

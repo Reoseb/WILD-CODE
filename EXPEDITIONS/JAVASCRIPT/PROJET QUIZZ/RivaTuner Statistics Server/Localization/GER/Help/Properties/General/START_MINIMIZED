@@ -1,0 +1,6 @@
+Minimiert starten
+Erzwingt das Minimieren von %PRODUCTNAME% beim Starten in den Infobereich.
+
+Hinweise:
+- Diese Option beeinflusst nur das manuelle Starten der Anwendung. %PRODUCTNAME% wird beim Starten mit Windows immer minimiert.
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

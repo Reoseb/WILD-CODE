@@ -1,0 +1,6 @@
+On-Screen-Display-Vorschau
+Zeigt die On-Screen-Display-Vorschau. Bitte beachten Sie, dass die Vorschau wirklich nur für Anzeigemodi gilt, die mit ihrem derzeitigen Anzeigemodus überstimmen, und nur in Verbindung mit der Ursprungsecke.
+
+Hinweise:
+- Anticheat-Systeme von einigen Spielen können das Einhaken in den Spielcode, das für die Anwendungserkennung und das Rendern des On-Screen-Displays nötig ist, als möglichen Cheat erkennen und die Verbindung zu Multiplayer-Servern verweigern. Um dieses Problem zu lösen, kann ein Profil für das Spiel erstellt werden und die Unterstützung für das On-Screen-Display deaktiviert werden. Versuchen Sie das Anwendungserkennungs-Level zu verringern, falls das nicht hilft.
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

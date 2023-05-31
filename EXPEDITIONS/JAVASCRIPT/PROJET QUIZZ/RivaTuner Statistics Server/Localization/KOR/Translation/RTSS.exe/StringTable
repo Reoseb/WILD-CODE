@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst %s _ºÅ_À> _º°øÀûÀ¸·Î ÄÄÆÄÀÏ Çß_À_Ï_Ù.
+#end
+#src Failed to compile %s skin!
+#dst %s _ºÅ_ÀÇ ÄÄÆÄÀÏ¿¡ _ÇÆĞÇß_À_Ï_Ù.
+#end
+#src %s skin has been successfully decompiled!
+#dst %s _ºÅ_À> _º°øÀûÀ¸·Î ÷ğÄÄÆÄÀÏ Çß_À_Ï_Ù.
+#end 
+#src Failed to decompile %s skin!
+#dst %s _ºÅ_ ÷ğÄÄÆÄÀÏ¿¡ _ÇÆĞÇß_À_Ï_Ù.
+#end
+#src Failed to load %s skin!
+#dst %s _ºÅ_ ·Î÷å¿¡ _ÇÆĞÇß_À_Ï_Ù.
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst %PRODUCTNAME%ÀÇ +¸_º ¿ä_Ò Áß ÀÏºÎÀÇ +â°_ÀÌ °æ°úÇÏ¿_°Å_ª º¯°æ, È¤Àº >ı·<÷Ç_ú_À_Ï_Ù.
+#end 
+#src Failed to load %s skin, reverting to default skin!
+#dst %s _ºÅ_À> ºÒ·¯¿À_Â÷_ _ÇÆĞÇß_À_Ï_Ù. +âº> _ºÅ_À¸·Î º¹¿øÇÕ_Ï_Ù.
+#end 
+#src Unsupported %s skin file format!
+#dst Áö¿øÇÏÁö _Ê_Â _ºÅ_ Çü_ÄÀÔ_Ï_Ù.
+#end 
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst
+#end
+#src Failed to initialize main window!
+#dst
+#end
+#src Beta %d
+#dst %d º£Å¸
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst %d-%m-%Y %H:%M:%S¿¡ ÄÄÆÄÀÏ µÊ
+#end
+#src expires on %s
+#dst %s¿¡ ¸¸·á
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst RTSSHooks.dll ¶óÀÌºê·¯¸®¸¦ ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù.
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst ÆÁ: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#end
+#src Failed to restore main window DIB cache!
+#dst
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst
+#end
+#src %PRODUCTNAME% properties
+#dst
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst
+#end
+#src Failed to save resource file copy to %s!
+#dst
+#end
+#src Executable files (*.exe)|*.exe||
+#dst
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst ‡æ€§ øö€¥ ƒ–_… üæ€ì€> >§õ« Ÿ€”__™.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%€Œ _™õ®úç¥ øö_‰‡•__™. _™õ®úç¥ †¤€Œæñ³ æ+ õc_ƒøš_€_+®?
+#end
+#src Cannot retrieve update information from the update server!
+#dst _çç_€Œ†R _-üæúó… _çç_€Œ†R ıóññ³ ü€> _æ _è_€__™.
+#end
+#src Cannot establish connection with the update server!
+#dst _çç_€Œ†R _-üæõ õ¿ø¡‡’ _æ _è_€__™.
+#end
+#src cannot open internet connection
+#dst €…_ õ¿ø¡€> õ- _æ _è_€__™.
+#end
+#src cannot open server connection
+#dst _-üæ õ¿ø¡€> õ- _æ _è_€__™.
+#end
+#src cannot open HTTP request
+#dst HTTP õ¤ƒ€> õ- _æ _è_€__™.
+#end
+#src cannot send HTTP request
+#dst HTTP õ¤ƒ>€> óñ__ _æ _è_€__™.
+#end
+#src cannot query HTTP info
+#dst HTTP ıóññ³ õ¤ƒ>‡’ _æ _è_€__™.
+#end
+#src proxy authentification required
+#dst ‡ú_ƒ €å€Œ ‡Šõ¤‡•__™.
+#end
+#src cannot read file
+#dst †„€€> €€> _æ _è_€__™.
+#end
+#src unknown reason %d
+#dst _‹ _æ _è_‚ €Œ€ô %d
+#end
+#src Reason : %s, error code %d
+#dst €Œ€ô : %s, õöúô „šç¥ %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst %Y/%B/%d(%A)õö ƒ–_ ˆR€ç‡_ê_€__™.
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst
+#end

@@ -1,0 +1,3 @@
+Dedizierten Server Encoder Typ
+Ermöglicht die Auswahl zwischen 32-Bit oder 64-BitEncoder dedizierten Server.Der 32-Bit-Server wird aus Kompatibilitätsgründen empfohlen, weil viele VFW-Codecs VFW Kompression derzeit nur mit 32-Bit unterstützen. Der 64-Bit-Server kann in Verbindung mit Videovorwegaufnahme nützlich sein, weil es Ihnen erlaubt, mehr als 2 GB RAM für den Aufnahmepuffer zu verwenden. 
+

@@ -1,0 +1,7 @@
+Nível de detecção: Normal 
+Seleciona o nível de detecção normal para o programa associado ao perfil atual. O modo normal é aplicado às bibliotecas Direct3D e OpenGL do programa. 
+Este é o modo mais indicado para a coleta de estatísticas em tempo real, como a taxa de quadros e outros serviços adicionais do mostrador de informações na tela, para a maioria das aplicações 3D modernas. 
+
+Sugestões: 
+- Algumas programas protegidos podem tratar a coleta de estatísticas como possível ameaça e se recusarem a executar. Tente diminuir o nível de detecção para solucionar tais questões. 
+- Você pode desativar sugestões em <Inteface> na aba das propriedades.

@@ -1,0 +1,7 @@
+Limitar taxa de quadros
+Permite definir um limite para a taxa de quadros nas aplicações 3D. Limitar a taxa de quadros durante um jogo pode ajudar a reduzir o consumo de energia e melhorar a experiência, devido à remoção de efeito indesejados causados por flutuações na geração dos quadros. Defina-o a zero para desativar o limite.
+Esta opção deve se específica, você pode configurá-la de forma independente para cada aplicação.
+
+Sugestões:
+- É altamente recomendável desabilitar a sinconização vertical nas opções do programa para aplicar a funcionalidade de limitação da taxa de quadros adequadamente.
+- Você pode desativar sugestões em <Inteface> na aba das propriedades.

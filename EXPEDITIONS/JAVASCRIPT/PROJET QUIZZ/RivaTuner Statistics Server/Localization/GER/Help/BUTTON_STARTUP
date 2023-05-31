@@ -1,0 +1,5 @@
+Mit Windows starten
+Erlaubt das starten von %PRODUCTNAME% mit Windows. Aktivieren Sie diese Option nur, wenn Sie %PRODUCTNAME% als Standalone-Framerate-Anzeige-Lösung verwenden. Falls Sie diese Anwendung in Verbindung mit Clients, wie z.B. RivaTuner, HIS iTurbo, EVGA Precision oder MSI Afterburner, benutzen, werden die Clients den Server automatisch laden, wenn benötigt.
+
+Hinweise:
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

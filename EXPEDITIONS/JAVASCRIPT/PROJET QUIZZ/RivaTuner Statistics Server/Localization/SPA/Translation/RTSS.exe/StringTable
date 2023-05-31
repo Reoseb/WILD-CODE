@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst
+#end
+#src Failed to compile %s skin!
+#dst Fallo al compilar el tema %s!
+#end
+#src %s skin has been successfully decompiled!
+#dst El tema %s ha sido decompilado satisfactoriamente!
+#end
+#src Failed to decompile %s skin!
+#dst Fallo al descompilar el tema %s!
+#end
+#src Failed to load %s skin!
+#dst Fallo al cargar el tema %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Algunos componentes de %PRODUCTNAME% han caducado, no existen o están corruptos!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Fallo al cargar el tema %s, utilizando tema por defecto! 
+#end
+#src Unsupported %s skin file format!
+#dst Formato de tema %s no soportado!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Fallo al inicializar la ventana principal del tema %s. Se utilizará el tema por defecto!
+#end
+#src Failed to initialize main window!
+#dst Fallo al inicializar la ventana principal!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst
+#end
+#src expires on %s
+#dst
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Pista: %PRODUCTNAME% está actualmente minimizado en la bandeja de sistema. Puede hacer click en su icino para traer la ventana de %PRODUCTNAME% al frente.
+#end
+#src Failed to restore main window DIB cache!
+#dst Fallo al restaurar el cache DIB de la ventana principal!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst
+#end
+#src %PRODUCTNAME% properties
+#dst Propiedades de %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst
+#end
+#src Failed to save resource file copy to %s!
+#dst
+#end
+#src Executable files (*.exe)|*.exe||
+#dst
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst
+#end
+#src Cannot retrieve update information from the update server!
+#dst
+#end
+#src Cannot establish connection with the update server!
+#dst
+#end
+#src cannot open internet connection
+#dst
+#end
+#src cannot open server connection
+#dst
+#end
+#src cannot open HTTP request
+#dst
+#end
+#src cannot send HTTP request
+#dst
+#end
+#src cannot query HTTP info
+#dst
+#end
+#src proxy authentification required
+#dst
+#end
+#src cannot read file
+#dst
+#end
+#src unknown reason %d
+#dst
+#end
+#src Reason : %s, error code %d
+#dst
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst
+#end

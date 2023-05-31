@@ -1,0 +1,47 @@
+https://openclassrooms.com/fr/courses/6173491-apprenez-a-utiliser-la-ligne-de-commande-dans-un-terminal
+https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript
+https://openclassrooms.com/fr/courses/1603881-creez-votre-site-web-avec-html5-et-css3
+
+
+MOD********************************************************
+
+appendChild : 
+
+DOCUMENT (propriétés / méthodes)
+https://developer.mozilla.org/fr/docs/Web/API/Document
+https://developer.mozilla.org/fr/docs/Web/API/HTMLImageElement
+
+createElement :
+const newCatImage = document.createElement('img');
+
+GET ELEMENT
+// We create a variable bearImage, set to the DOM node that have the id bear-img
+const bearImg = document.getElementById("bear-img");
+
+// We change the width and the alt of the image
+bearImg.width = "500";
+bearImg.alt = "A cute wild bear";
+
+
+QUERY SELECTOR
+const someDivClass = document.querySelector('.my-div');
+const someImg = document.querySelector('.my-img');
+const someDivId = document.querySelector('#another-div');
+const someH1 = document.querySelector('.my-div h1');
+
+const title = document.querySelector('.title');
+title.innerHTML = "Hello, Bob!";
+
+// We create a variable userName set to the result of prompt
+const userName = prompt("What's your name");
+
+// We create a variable set to the first element that match .title
+const title = document.querySelector('.title');
+
+// We replaced what's between the two tag by a template string with userName
+title.innerHTML = `Hello, ${userName}`;
+
+document.querySelectorAll : obtenir un tableau avec plusieurs éléments
+document.querySelectorAll('h1');
+
+

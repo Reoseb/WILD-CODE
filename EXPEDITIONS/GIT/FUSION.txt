@@ -1,0 +1,13 @@
+PS C:\Users\RéoSeb\Documents\WILD CODE\GIT\merge_conflicts> git add README.md
+PS C:\Users\RéoSeb\Documents\WILD CODE\GIT\merge_conflicts> git commit
+[main 1fbaa9d] "So You choose War"
+ 1 file changed, 1 insertion(+)
+PS C:\Users\RéoSeb\Documents\WILD CODE\GIT\merge_conflicts> git pull
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\RéoSeb\Documents\WILD CODE\GIT\merge_conflicts> git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+PS C:\Users\RéoSeb\Documents\WILD CODE\GIT\merge_conflicts>

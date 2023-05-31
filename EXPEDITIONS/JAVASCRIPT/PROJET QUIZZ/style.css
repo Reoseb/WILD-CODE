@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background: #252525;
+}
+h1 {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 0.5em;
+    background-color: #e47b25;
+    color: #fff;
+    border-radius: 320px 320px 15px 15px;
+    margin-bottom: 2em;
+    display: block;
+    text-align: center;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question01 {
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    background-color: #09b325;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.8em;
+    margin-bottom: 2em;
+    border-radius: 5rem;
+    display: inline-flex;
+    transform:rotate(6deg);
+}
+
+.question01 legend{
+    padding: 0.8em;
+    color: #000;
+    font-weight: bold;
+}
+
+.question01 fieldset{
+    padding: 0.8em;
+    border-radius: 5rem;
+}
+
+.question01 input {
+    padding: 0.8em;
+    display: inline-flex;
+}
+
+#logo {
+    align-items: center;
+
+}
+.question02 {
+    vertical-align:middle;
+    box-sizing: border-box;
+    background-color: #774a17;
+    text-decoration: none;
+    color: #fff;
+    padding: 1.6em;
+    margin-bottom: 2em;
+    border-radius: 8rem;
+    display: inline-flex;
+    transform:rotate(-4deg);
+}
+
+.question02 legend{
+    padding: 0.8em;
+    color: #000;
+    font-weight: bold;
+}
+
+.question02 fieldset {
+    padding: 0.8em;
+    border-radius: 5rem;
+}
+
+footer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 2em;
+    background-color: #e47b25;
+    color: #fff;
+    border-radius: 15px 15px 320px 320px;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    display: inline-flex;
+    align-items: felx-end;
+    justify-content: center;
+        color: #774a17;
+        background: #fae310;
+        padding: 0.2em;
+        margin: 0.2em;
+        width: 150px;
+    }
+    
+    #alex {
+        border-radius: opx opx 50px 50px;
+        transform:rotate(10deg)
+    }
+    #amelie {
+        transform:rotate(6deg)
+    }
+    #fatou {
+        transform:rotate(-8deg)
+    }
+    #reo {
+        transform:rotate(-15deg)
+    }
+    #nina {
+        transform:rotate(-5deg)
+    }
+
+#bouton01 {
+    margin-top: 0.7em;
+    background-color: red;
+    text-decoration: none;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 1rem;
+}
+
+#bouton02 {
+    margin-top: 0.7em;
+    background-color: #fae310;
+    text-decoration: none;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000;
+    border-color: #fff;
+    border-radius: 1rem;
+}

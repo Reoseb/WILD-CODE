@@ -1,0 +1,2971 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-y: scroll;">
+<head>
+  <meta charset="UTF-8">
+  <title>Newman Summary Report</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
+<style>
+code.renderMarkdown table, code.renderMarkdown th, code.renderMarkdown td {
+    border: 1px solid black;
+    width: max-content;
+    padding: .75rem;
+}
+
+.theme-dark {
+    --background-color: #222;
+    --bg-card-deck: #444444;
+    --text-color: #ccd2d8;
+    --tab-border: solid 1px #444;
+    --success: #3c9372;
+    --failure: #c24a3f;
+    --warning: #d28c23;
+    --info: #4083b6;
+    --badge-outline: #3c9372;
+    --badge-bg: #cdd3db;
+    --badge-text: #ccd2d9;
+    --failure-row: #c24a3f;
+    --warning-row: #d28c23;
+    --card-bg: #444;
+    --card-footer: #4f5758;
+    --form-input: #ececb5;
+    --hov-text: #d2dae5;
+    --h4-text: #ccd1d9;
+}
+
+.theme-light {
+    --tab-border: solid 1px #fff;
+    --text-color: #000000;
+    --success: #42a745;
+    --failure: #dc3544;
+    --warning: #f4c10b;
+    --info: #49a1b8;
+    --badge-outline: #040411;
+    --badge-bg: #f8f9fa;
+    --badge-text: #fff;
+    --failure-row: #f5c6cb;
+    --warning-row: #ffeeba;
+    --card-bg: #f7f7f7;
+    --hov-text: #fff;
+    --h4-text: #ffffff;
+}
+
+body {
+  padding-top:30px;
+  background-color: var(--background-color)!important;
+  color: var(--text-color);
+}
+
+#execution-data {
+  padding: 10px;
+  border: var(--tab-border);
+  border-top: none;
+}
+
+.nav-tabs {
+  padding-top: 10px;
+  height: 105px;
+  overflow-y: auto;
+}
+
+body.theme-dark .card-header {
+    background-color: #444;
+}
+
+body.theme-light .card-header {
+    background-color: #f7f7f7;
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: var(--card-footer);
+}
+
+.card-deck {
+    background-color: var(--bg-card-deck)!important;
+}
+.form-control {
+    background: var(--form-input);
+}
+
+.custom-tab {
+  padding: 10px 15px;
+  margin-right: 0px;
+  height: 47px;
+  width: 69px;
+  text-align: center;
+  border: var(--tab-border);
+  border-bottom: none;
+  cursor:pointer;
+}
+
+body.theme-dark .text-white {
+    color: #ccd2d9!important;
+}
+h4 {
+    color: var(--h4-text);
+}
+
+body.theme-dark h1 {
+    color: #ccd2da;
+}
+
+body.theme-dark .bg-light>td {
+    background: #4f5858!important;
+}
+
+body.theme-dark .hljs {
+    background: #0a0a0ab0!important;
+    color: #8d8787!important;
+}
+
+.bg-info {
+    background-color: var(--info)!important;
+}
+.bg-success {
+    background-color: var(--success)!important;
+}
+
+.alert-success {
+    background-color: var(--success)!important;
+}
+
+.alert-warning {
+    background-color: var(--warning)!important;
+}
+
+.alert-info {
+    background-color: var(--info)!important;
+}
+
+.bg-warning {
+    background-color: var(--warning)!important;
+}
+
+.badge-warning {
+    color: var(--badge-text)!important;
+    background-color: var(--warning)!important;
+}
+
+.table-warning>td {
+    background-color: var(--warning-row);
+}
+
+.alert-danger {
+    background-color: var(--failure)!important;
+}
+
+body.theme-dark .alert-dark {
+    background-color: #636467!important;
+}
+
+body.theme-dark .text-dark {
+    color: #d1dae4!important;
+}
+
+body.theme-dark .badge-light {
+    color: #212529;
+    background-color: #cdd3db;
+}
+
+body.theme-light .badge-light {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+body.theme-light .bg-danger {
+    background-color: var(--failure)!important;
+}
+
+body.theme-dark .bg-danger {
+    background-color: var(--failure)!important;
+}
+
+.table-danger>td {
+    background-color: var(--failure-row);
+}
+
+body.theme-dark .table .thead-light th {
+    background-color: #4f5858!important;
+    border-color: #dee2e6!important;
+    color: #ccd2d8!important;
+}
+
+.itPassed {
+  background: var(--success);
+  color: white;
+}
+.itFailed {
+  background: var(--failure);
+  color: white;
+}
+
+.resultsInfoPass {
+  color: var(--success);
+  padding-top: 4px;
+}
+
+.resultsInfoFail {
+  color: var(--failure);
+  padding-top: 4px;
+}
+
+.badge-outline-success {
+  color: var(--success);
+  border: 1px solid var(--success);
+  background-color: transparent;
+}
+
+.badge-outline {
+  color: var(--badge-outline);
+  border: 1px solid var(--badge-outline);
+  background-color: transparent;
+}
+
+.btn-outline-success {
+    color: var(--success)!important;
+    border-color: var(--success)!important;
+}
+
+.backToTop:hover {
+  background-color: var(--success);
+  border-color: var(--success);
+  color: var(--hov-text)!important;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--success);
+  border-color: var(--success);
+  color: var(--hov-text)!important;
+}
+
+.btn-outline-secondary {
+  background-color: var(--success)!important;
+  color: var(--hov-text)!important;
+}
+
+body.theme-dark .env-heading {
+    color: #ccd2d9!important;
+}
+
+body, html {
+  height:100%;
+}
+
+.card {
+  overflow:hidden;
+}
+
+body.theme-dark .card-body {
+    background-color: #444;
+}
+
+body.theme-light .card-body {
+    background-color: #f7f7f7;
+}
+
+body.theme-dark .card-body .bg-danger {
+    background-color: var(--failure)!important;
+}
+
+body.theme-light .card-body .bg-danger {
+    background-color: var(--failure)!important;
+}
+
+.card-body .rotate {
+  z-index: 8;
+  float: right;
+  height: 100%;
+}
+
+.card-body .rotate i {
+  color: #14141426;
+  position: absolute;
+  left: 0;
+  left: auto;
+  right: -10px;
+  bottom: 0;
+  display: block;
+  -webkit-transform: rotate(-44deg);
+  -moz-transform: rotate(-44deg);
+  -o-transform: rotate(-44deg);
+  -ms-transform: rotate(-44deg);
+  transform: rotate(-44deg);
+}
+
+.dyn-height {
+  max-height:350px;
+  overflow-y:auto;
+}
+
+.nav-pills .nav-link.active {
+  background-color: transparent!important;
+}
+
+.backToTop {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(90deg);
+}
+
+.single-line-tabs {
+  padding-top: 10px;
+  height: 60px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .slider {
+  background-color: #4083b6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4083b6;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+table.dataTable td, table.dataTable tr {
+    vertical-align: middle;
+}
+
+body.theme-dark code {
+    color: #ccd2d8!important;
+}
+
+body.theme-light code {
+    color: #000000!important;
+}
+
+.text-wrap {
+    word-wrap: break-word; 
+    min-width: 600px; 
+    max-width: 600px; 
+    white-space: normal;
+}
+
+</style>
+</head>
+<body class="theme-dark">
+<script>
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.body.className = themeName;
+    }
+
+    function toggleTheme() {
+        if (localStorage.getItem('theme') === 'theme-light') {
+            setTheme('theme-dark');
+        } else {
+            setTheme('theme-light');
+        }
+    }
+</script>
+  <div class="container">
+        <div class="container">
+            <label>Light</label>
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+            <label>Dark</label>
+        </div>
+        <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+            <li class="nav-item bg-info active" data-toggle="tooltip" title="Click to view the Summary">
+                <a class="nav-link text-white" id="pills-summary-tab" data-toggle="pill" href="#pills-summary" role="tab" aria-controls="pills-summary" aria-selected="true">Summary</a>
+            </li>
+            <li class="nav-item bg-success" data-toggle="tooltip" title="Click to view the Requests">
+                <a class="nav-link text-white" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Total Requests <span class="badge badge-light">3</span></a>
+            </li>
+            <li class="nav-item bg-danger" data-toggle="tooltip" title="Click to view the Failed Tests">
+                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">0</span></a>
+            </li>
+            <li class="nav-item bg-warning" data-toggle="tooltip" title="Click to view the Skipped Tests">
+                <a class="nav-link text-white" id="pills-skipped-tab" data-toggle="pill" href="#pills-skipped" role="tab" aria-controls="pills-skipped" aria-selected="false">Skipped Tests <span class="badge badge-light">0</span></a>
+            </li>
+            </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-summary" role="tabcard" aria-labelledby="pills-summary-tab">
+<div class="row">
+  <div class="col-md-9 col-lg-12 main">
+   <h1 class="display-2 text-center">Newman Run Dashboard</h1>
+   <h5 class="text-center">Friday, 12 May 2023 11:43:09</h5>
+   <div class="row">
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-success">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-retweet fa-5x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Iterations</h6>
+       <h1 class="display-1">1</h1>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-danger">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-list fa-4x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Assertions</h6>
+       <h1 class="display-1">9</h1>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-info">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-plus-circle fa-5x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Failed Tests</h6>
+       <h1 class="display-1">0</h1>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-warning">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-share fa-5x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Skipped Tests</h6>
+       <h1 class="display-1">0</h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <hr>
+    <div class="row">
+    <div class="col">
+        <div class="row">
+        <div class="col-sm-12 mb-3">
+            <div class="card border-info">
+                <div class="card-body">
+                <h5 class="card-title text-uppercase text-white text-center bg-info">File Information</h5>
+                <span><i class="fas fa-file-code"></i></span><strong> Collection:</strong> API GoogleBooks<br>
+                
+                
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 mb-3">
+            <div class="card border-info">
+                <div class="card-body">
+                <h5 class="card-title text-uppercase text-white text-center bg-info">Timings and Data</h5>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 1254ms<br>
+                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 54.07KB<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 304ms<br>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 mb-3">
+            <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-inverse">
+                    <tr class="text-center">
+                        <th class="text-uppercase">Summary Item</th>
+                        <th class="text-uppercase">Total</th>
+                        <th class="text-uppercase">Failed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Requests</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td>Prerequest Scripts</td>
+                        <td class="text-center">4</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td>Test Scripts</td>
+                        <td class="text-center">6</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr class="">
+                        <td>Assertions</td>
+                        <td class="text-center">9</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr class="">
+                        <td>Skipped Tests</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+    <hr>
+   </div>
+   </div>
+  </div>
+ </div>
+        </div>
+            <div class="tab-pane fade" id="pills-failed" role="tabcard" aria-labelledby="pills-failed-tab">
+                <button id="topOfFailuresScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
+
+                <div class="alert alert-success text-uppercase text-center">
+                     <br><br><h1 class="text-center">There are no failed tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-skipped" role="tabcard" aria-labelledby="pills-skipped-tab">
+                <button id="topOfSkippedScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
+
+                <div class="alert alert-success text-uppercase text-center">
+                    <br><br><h1 class="text-center">There are no skipped tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-requests" role="tabcard" aria-labelledby="pills-requests-tab">
+
+            <button id="topOfRequestsScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
+
+            <div class="btn-group float-right" role="group" aria-label="Button Group">
+                <button id="openAll" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Folders</button>
+                <button id="openAllRequests" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Requests</button>
+            </div>
+
+    <div class="text-uppercase" id="execution-menu">
+        <h5>1 Iteration available to view</h5>
+        
+        <nav class="table-responsive">
+        <ul class="nav single-line-tabs" id="iterationList">
+        </ul>
+        </nav>
+    </div>
+    <h6 class="text-uppercase text-muted" id="iterationSelected" style="padding-top: 10px;"></h6>
+	<div class="tab-content" id="execution-data">
+        <div class="alert alert-dark text-uppercase text-center iteration-0">
+        <a data-toggle="collapse" href="#" data-target="#folder-collapse-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0" aria-expanded="false" aria-controls="collapse" id="folder-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0" class="collapsed text-dark z-block">
+        <i class="fas fa-info-circle float-left resultsInfoPass" ></i>
+            List Books - 2 Requests in the folder<i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
+        </a>
+        </div>
+        <div id="folder-collapse-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0" class="collapse" aria-labelledby="folder-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3">
+            <div id="folder-92c77284-e1c9-491f-a673-f028a78a1b29" class="card-deck iteration-0">
+            <div class="row iteration-0">
+                <div class="col-sm-12 mb-3 iteration-0">
+                <div class="card iteration-0">
+                    <div class="card-header  bg-success iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-92c77284-e1c9-491f-a673-f028a78a1b29" aria-expanded="false" aria-controls="collapse" id="requests-92c77284-e1c9-491f-a673-f028a78a1b29" class="collapsed text-white z-block">
+                    Iteration: 1 - recherche par titre <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
+                </a>
+                    </div>
+                    <div id="collapse-92c77284-e1c9-491f-a673-f028a78a1b29" class="collapse" aria-labelledby="requests-92c77284-e1c9-491f-a673-f028a78a1b29">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Request Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request Method:</strong> <span class="badge-outline-success badge badge-success"> GET</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request URL:</strong> <a href="https://www.googleapis.com/books/v1/volumes?q&#x3D;intitle:pi%C3%A8ge" target="_blank">https://www.googleapis.com/books/v1/volumes?q&#x3D;intitle:pi%C3%A8ge</a><br>
+                                    </div>
+                                </div>
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 450ms</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 43.92KB</span><br>
+                                    <hr>
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
+                                    <div>
+                                        <div class="progress" style="height: 40px;">
+                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase text-white text-center bg-info">Request Headers</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                            <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-nowrap">User-Agent</td>
+                                                        <td class="text-wrap">PostmanRuntime/7.29.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept</td>
+                                                        <td class="text-wrap">*/*</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Cache-Control</td>
+                                                        <td class="text-wrap">no-cache</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Postman-Token</td>
+                                                        <td class="text-wrap">0a634cdb-85b4-44f0-802b-34c2134fe7d5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Host</td>
+                                                        <td class="text-wrap">www.googleapis.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept-Encoding</td>
+                                                        <td class="text-wrap">gzip, deflate, br</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Connection</td>
+                                                        <td class="text-wrap">keep-alive</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Headers</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                        <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Type</td>
+                                                    <td class="text-wrap">application/json; charset&#x3D;UTF-8</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">Origin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">X-Origin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">Referer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Encoding</td>
+                                                    <td class="text-wrap">gzip</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Date</td>
+                                                    <td class="text-wrap">Fri, 12 May 2023 09:43:07 GMT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Server</td>
+                                                    <td class="text-wrap">ESF</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Cache-Control</td>
+                                                    <td class="text-wrap">private</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-XSS-Protection</td>
+                                                    <td class="text-wrap">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-Frame-Options</td>
+                                                    <td class="text-wrap">SAMEORIGIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-Content-Type-Options</td>
+                                                    <td class="text-wrap">nosniff</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Alt-Svc</td>
+                                                    <td class="text-wrap">h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Transfer-Encoding</td>
+                                                    <td class="text-wrap">chunked</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
+                                        <div class="dyn-height">
+                                                <pre><code id="copyText-3d20f9be-86b1-48ec-823e-363970213c47" class="prettyPrint">{
+          &quot;kind&quot;: &quot;books#volumes&quot;,
+          &quot;totalItems&quot;: 192,
+          &quot;items&quot;: [
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;hrPDDQAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;Yd93bvYhlJc&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/hrPDDQAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Le piège de verre&quot;,
+                &quot;authors&quot;: [
+                  &quot;Éric Fouassier&quot;
+                ],
+                &quot;publisher&quot;: &quot;JC Lattès&quot;,
+                &quot;publishedDate&quot;: &quot;2017-02-01&quot;,
+                &quot;description&quot;: &quot;Automne 1503, trois alchimistes sont retrouvés assassinés dans des circonstances dramatiques. Convaincue qu’un terrible complot se trame à l’ombre de la Couronne, la reine Anne de Bretagne lance sur la piste des suspects le plus improbable des duos d’enquêteurs : le baron de Comballec, un soldat rude et autoritaire, accompagné d’Héloïse Sanglar, une séduisante jeune femme experte en apothicairerie. Pour déjouer l’incroyable machination conçue par un esprit dérangé, ils devront décrypter les énigmes d’un mystérieux parchemin et récolter des indices en différents hauts lieux symboliques du Royaume. Mais les apparences sont souvent trompeuses. Dissimulés en coulisses, les véritables ennemis sont bien décidés à contrecarrer les efforts de nos héros. Dans ces conditions, le chasseur peut rapidement devenir gibier à son tour... Vitrail aux pouvoirs mortifères, sciences occultes, disparitions mystérieuses... les menaces ploient sur la jeune Héloïse, bien décidée à venir à bout des adversaires du roi. Mais les temps sont difficiles quand on est une femme, et afin de survivre, il lui faudra l’aide de tous ses alliés. Peut-être même devra-t-elle faire appel à son amour de jeunesse, le chevalier Bayard. À moins que l’attrait grandissant que Comballec exerce sur elle ne bouleverse ses plans...&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782709657716&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2709657716&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 480,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;1.5.5.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;hrPDDQAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;hrPDDQAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;hrPDDQAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;hrPDDQAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;hrPDDQAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;hrPDDQAAQBAJ&amp;rdid&#x3D;book-hrPDDQAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Le_pi%C3%A8ge_de_verre-sample-epub.acsm?id&#x3D;hrPDDQAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Le_pi%C3%A8ge_de_verre-sample-pdf.acsm?id&#x3D;hrPDDQAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;hrPDDQAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Automne 1503, trois alchimistes sont retrouvés assassinés dans des circonstances dramatiques.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;-TpMEAAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;t6+DaGZ+JG8&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/-TpMEAAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Un piège dans la ville&quot;,
+                &quot;authors&quot;: [
+                  &quot;Nora Roberts&quot;
+                ],
+                &quot;publisher&quot;: &quot;Harlequin&quot;,
+                &quot;publishedDate&quot;: &quot;2022-01-01&quot;,
+                &quot;description&quot;: &quot;Jonah Blackhawk : un homme solitaire et déterminé, dont l’expérience lui a appris à se méfier des uniformes. Alors, à l’idée qu’un policier enquête dans ses clubs, il enrage. Pourtant, il le sait, il va être obligé de faire une entorse à ses principes... D’abord parce qu’une bande de malfaiteurs se croit autorisée à utiliser ses clubs comme repères. Ensuite, parce que l’agent qui va enquêter auprès de lui est Ally Fletcher. Ally, une femme au charisme déroutant, et d’une beauté à couper le souffle...&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782280459044&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2280459043&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 304,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;1.2.2.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;-TpMEAAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;-TpMEAAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;-TpMEAAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;2&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;-TpMEAAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;-TpMEAAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 5.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 5.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;-TpMEAAAQBAJ&amp;rdid&#x3D;book--TpMEAAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 5990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 5990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Un_pi%C3%A8ge_dans_la_ville-sample-epub.acsm?id&#x3D;-TpMEAAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Un_pi%C3%A8ge_dans_la_ville-sample-pdf.acsm?id&#x3D;-TpMEAAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;-TpMEAAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Jonah Blackhawk : un homme solitaire et déterminé, dont l’expérience lui a appris à se méfier des uniformes.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;sTNtDwAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;dV6B2Nd28BM&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/sTNtDwAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Les Travaux d&#x27;Apollon -&quot;,
+                &quot;subtitle&quot;: &quot;Le piège de feu&quot;,
+                &quot;authors&quot;: [
+                  &quot;Rick Riordan&quot;,
+                  &quot;Mona de Pracontal&quot;
+                ],
+                &quot;publisher&quot;: &quot;Albin Michel&quot;,
+                &quot;publishedDate&quot;: &quot;2018-10-03&quot;,
+                &quot;description&quot;: &quot;Flamboyant dieu du soleil et de la poésie, Apollon n&#x27;est plus qu&#x27;un simple mortel boutonneux répondant au nom de Lester Papadopoulos. Puni par Zeus et chassé hors de l&#x27;Olympe, il doit, pour regagner sa place, restaurer cinq oracles qui ont cessé de délivrer leurs prophéties. Ces impossibles travaux, il devra les accomplir sans ses pouvoirs divins, et accompagné de l&#x27;irritante fille de Déméter, Meg. Merci qui ? Merci Papa ! Avec l&#x27;aide de ses amis demi-dieux, Apollon a réussi à sortir indemne de ses deux premiers travaux, et Meg a finalement reçu la prophétie des ténèbres. Ils savent maintenant qu&#x27;un groupe d&#x27;empereurs romains maléfiques a prévu de lancer une attaque sur le camp Jupiter. Alors que Leo se précipite au camp pour prévenir leurs amis, Apollon, Meg et Grover entrent dans le labyrinthe de feu, afin de trouver le troisième oracle. À partir de 11 ans.&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782226431608&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2226431608&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 528,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Juvenile Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;1.1.1.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;sTNtDwAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;sTNtDwAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;sTNtDwAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;3&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;sTNtDwAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;sTNtDwAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;sTNtDwAAQBAJ&amp;rdid&#x3D;book-sTNtDwAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Les_Travaux_d_Apollon-sample-epub.acsm?id&#x3D;sTNtDwAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Les_Travaux_d_Apollon-sample-pdf.acsm?id&#x3D;sTNtDwAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;sTNtDwAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Flamboyant dieu du soleil et de la poésie, Apollon n&amp;#39;est plus qu&amp;#39;un simple mortel boutonneux répondant au nom de Lester Papadopoulos.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;aoXlDAAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;WmZcjeOFEcw&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/aoXlDAAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Le piège&quot;,
+                &quot;authors&quot;: [
+                  &quot;Melanie Raabe&quot;
+                ],
+                &quot;publisher&quot;: &quot;JC Lattès&quot;,
+                &quot;publishedDate&quot;: &quot;2016-09-14&quot;,
+                &quot;description&quot;: &quot;Linda Conrads est un auteur à succès qui vit reclus au milieu de nulle part, avec pour seuls contacts son assistante et son éditeur. Hantée par la mort de sa sœur et le visage de son assassin, qu’elle a vu juste avant qu’il ne prenne la fuite, elle n’a pas quitté sa maison depuis onze ans. Mais lorsqu’apparaît sur son écran de télévision un journaliste, elle n’a aucun doute, il s’agit du meurtrier. Linda décide de lui tendre un piège : dans son nouveau roman, un thriller, elle racontera le drame de sa sœur et n’acceptera de donner qu’une seule interview, celle de cet homme. Mais est-il vraiment le coupable ? Après tant d’années de solitude, si longtemps après les tragiques événements, dans un état mental jugé fragile par certains, Linda peut-elle encore se fier à ses souvenirs et à ses certitudes ? Traduit de l’allemand par Céline Maurice&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782709649766&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2709649764&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 350,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: false,
+                &quot;contentVersion&quot;: &quot;1.2.2.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;aoXlDAAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;aoXlDAAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;aoXlDAAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;4&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;aoXlDAAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;aoXlDAAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;aoXlDAAAQBAJ&amp;rdid&#x3D;book-aoXlDAAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Le_pi%C3%A8ge-sample-epub.acsm?id&#x3D;aoXlDAAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Le_pi%C3%A8ge-sample-pdf.acsm?id&#x3D;aoXlDAAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;aoXlDAAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Linda décide de lui tendre un piège : dans son nouveau roman, un thriller, elle racontera le drame de sa sœur et n’acceptera de donner qu’une seule interview, celle de cet homme. Mais est-il vraiment le coupable ?&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;Drk1DwAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;d84pRNv5o0g&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/Drk1DwAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Double piège&quot;,
+                &quot;authors&quot;: [
+                  &quot;Harlan COBEN&quot;
+                ],
+                &quot;publisher&quot;: &quot;Belfond&quot;,
+                &quot;publishedDate&quot;: &quot;2017-10-05&quot;,
+                &quot;description&quot;: &quot;Vous pensez connaître la vérité. La vérité est que vous ignorez tout. New Jersey, aujourd&#x27;hui. Pour surveiller sa baby-sitter, Maya a installé une caméra dans son salon. Un jour, un homme apparaît à l&#x27;écran, jouant avec sa petite Lily. Un homme que Maya connaît bien : Joe, son mari... qu&#x27;elle vient d&#x27;enterrer. Un choc. Et de troublantes découvertes : le certificat de décès de Joe a disparu et l&#x27;arme impliquée dans sa mort est aussi celle qui a coûté la vie à la sœur de Maya, Claire, trois ans plus tôt. Mort ou vivant, qui était vraiment Joe ? Doit-on croire tout ce que l&#x27;on voit ? Pour Maya, l&#x27;heure est venue de plonger dans un passé trouble ; un monde à la frontière entre vérité et illusions. Un monde dangereux, dont elle pourrait être la nouvelle victime.&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782714473400&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2714473407&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 274,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;1.3.5.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;Drk1DwAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;Drk1DwAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;Drk1DwAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;5&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;Drk1DwAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;Drk1DwAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 13.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 13.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;Drk1DwAAQBAJ&amp;rdid&#x3D;book-Drk1DwAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 13990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 13990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Double_pi%C3%A8ge-sample-epub.acsm?id&#x3D;Drk1DwAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Double_pi%C3%A8ge-sample-pdf.acsm?id&#x3D;Drk1DwAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;Drk1DwAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Vous pensez connaître la vérité.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;Rl0ILYPMUSIC&quot;,
+              &quot;etag&quot;: &quot;qZ9XqIK00t0&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/Rl0ILYPMUSIC&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Métagénéalogie&quot;,
+                &quot;subtitle&quot;: &quot;La famille, un trésor et un piège&quot;,
+                &quot;authors&quot;: [
+                  &quot;Alexandro Jodorowsky&quot;,
+                  &quot;Marianne Costa&quot;
+                ],
+                &quot;publisher&quot;: &quot;Albin Michel&quot;,
+                &quot;publishedDate&quot;: &quot;2011-10-05&quot;,
+                &quot;description&quot;: &quot;Qu&#x27;est-ce que la métagénéalogie ? Pourquoi ne pas parler plutôt de psychogénéalogie, puisque ce mot est à la mode ? Le vocable psychogénéalogie a été inventé par Alexandro Jodorowsky au début des années 1980. Depuis lors, l&#x27;usage s&#x27;en est vulgarisé au point de recouvrir des pratiques extraordinairement variées. Les unes relèvent de la psychologie « pure et dure »; les autres de la médiumnité la plus invérifiable. A l&#x27;écart de ces deux extrêmes, la métagénéalogie se propose de réconcilier les apparents contraires, en se situant précisément à leur point de jonction : là où l&#x27;irrationnel collabore avec le rationnel, où la science danse avec l&#x27;art, où « clairvoyance » signifie aussi bien « intuition » que « lucidité ». Cet ouvrage se propose de résumer et présenter de manière accessible les trente-cinq années de recherches et de découvertes menées par Alexandro Jodorowsky sur l&#x27;arbre généalogique. Solidement ancrée dans les théories psychologiques et scientifiques de son temps, la métagénéalogie reflète le parcours artistique d&#x27;une vie entière, et la quête insatiable de sens qui l&#x27;anime. Plutôt qu&#x27;un manuel, nous nous sommes proposé d&#x27;écrire le roman d&#x27;une double initiation : celle, déjà accomplie, de l&#x27;inventeur de la métagénéalogie, et celle, en devenir, de qui voudra bien se prêter au jeu et entamer avec nous ce chemin de la reconquête de son identité véritable. Marianne Costa&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782226261427&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2226261427&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 544,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Social Science&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;0.0.1.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;Rl0ILYPMUSIC&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;Rl0ILYPMUSIC&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;Rl0ILYPMUSIC&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;6&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;Rl0ILYPMUSIC&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;Rl0ILYPMUSIC&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 8.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;Rl0ILYPMUSIC&amp;rdid&#x3D;book-Rl0ILYPMUSIC&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 8490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/M%C3%A9tag%C3%A9n%C3%A9alogie-sample-epub.acsm?id&#x3D;Rl0ILYPMUSIC&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/M%C3%A9tag%C3%A9n%C3%A9alogie-sample-pdf.acsm?id&#x3D;Rl0ILYPMUSIC&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;Rl0ILYPMUSIC&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Qu&amp;#39;est-ce que la métagénéalogie ? Pourquoi ne pas parler plutôt de psychogénéalogie, puisque ce mot est à la mode ? Le vocable psychogénéalogie a été inventé par Alexandro Jodorowsky au début des années 1980.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;BIjdP3eGcMcC&quot;,
+              &quot;etag&quot;: &quot;8c6tVEk/6rg&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/BIjdP3eGcMcC&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Piège de feu&quot;,
+                &quot;subtitle&quot;: &quot;Une enquête de Maggie O&#x27;Dell&quot;,
+                &quot;authors&quot;: [
+                  &quot;Alex Kava&quot;
+                ],
+                &quot;publisher&quot;: &quot;Harlequin&quot;,
+                &quot;publishedDate&quot;: &quot;2011-07-01&quot;,
+                &quot;description&quot;: &quot;Une nouvelle enquête de l’agent Maggie O’Dell Encore bouleversée par le décès de son ancien patron, Maggie O’Dell, profiler du FBI, reprend tout juste du service lorsqu’elle est appelée d’urgence dans le Minnesota : un attentat vient d’avoir lieu dans un centre commercial – un massacre d’autant plus terrifiant qu’il n’est pas revendiqué. Pourtant, le pire attend encore Maggie. Une fois sur les lieux, en effet, elle découvre avec stupeur que, selon des sources anonymes, son jeune demi-frère, Patrick, serait lui aussi impliqué dans ce massacre. Des soupçons d’autant plus alarmants que Patrick reste introuvable. Car s’il n’est pas coupable, pourquoi se cache-t-il et pourquoi ne lui a-t-il pas fait confiance plutôt que de fuir en cédant à la panique ? Prête à tout pour le sauver, Maggie sollicite d’urgence l’aide de Nick Morrelli, un expert en sécurité qu’elle connaît de longue date et à qui elle a toujours accordé une confiance absolue. A propos de l&#x27;auteur : Depuis la parution de Sang Froid, le premier roman d’Alex Kava, ses thrillers connaissent un énorme succès aux Etats-Unis et dans tous les pays où ils sont traduits. Comme sa consœur Patricia Cornwell, Alex Kava a aujourd’hui de véritables fans dans le monde entier. Toutes les enquêtes de Maggie O’Dell : Sur la piste du tueur Au cœur du brasier Effroi Au cœur du danger Le collectionneur Le pacte Les âmes piégées Piège de feu En danger de mort Sang froid&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782280241458&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2280241455&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 416,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;1.7.6.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;BIjdP3eGcMcC&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;BIjdP3eGcMcC&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;BIjdP3eGcMcC&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;7&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;BIjdP3eGcMcC&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;BIjdP3eGcMcC&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 5.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 5.49,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;BIjdP3eGcMcC&amp;rdid&#x3D;book-BIjdP3eGcMcC&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 5490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 5490000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Pi%C3%A8ge_de_feu-sample-epub.acsm?id&#x3D;BIjdP3eGcMcC&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Pi%C3%A8ge_de_feu-sample-pdf.acsm?id&#x3D;BIjdP3eGcMcC&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;BIjdP3eGcMcC&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Toutes les enquêtes de Maggie O’Dell : Sur la piste du tueur Au cœur du brasier Effroi Au cœur du danger Le collectionneur Le pacte Les âmes piégées Piège de feu En danger de mort Sang froid&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;6cyyCwAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;DuHWGmVPzOA&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/6cyyCwAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Le noir est ma couleur - Le piège&quot;,
+                &quot;authors&quot;: [
+                  &quot;Olivier Gay&quot;
+                ],
+                &quot;publisher&quot;: &quot;Rageot Editeur&quot;,
+                &quot;publishedDate&quot;: &quot;2016-02-17&quot;,
+                &quot;description&quot;: &quot;Manon et Alexandre sont à Nice chez les Mages Noirs. Ils espèrent qu’ils aideront la jeune fille à maîtriser ses nouveaux pouvoirs. Quand elle comprend qu’ils l’utilisent à son insu, elle préfère fuir. Avec Alexandre et trois jeunes Mages, elle décide de se rendre à Rome afin de découvrir la source du pouvoir noir...&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782700250473&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2700250478&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 288,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Juvenile Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;0.1.1.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;6cyyCwAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;6cyyCwAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;6cyyCwAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;8&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;6cyyCwAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;6cyyCwAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 10.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 10.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;6cyyCwAAQBAJ&amp;rdid&#x3D;book-6cyyCwAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 10990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 10990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Le_noir_est_ma_couleur_Le_pi%C3%A8ge-sample-epub.acsm?id&#x3D;6cyyCwAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Le_noir_est_ma_couleur_Le_pi%C3%A8ge-sample-pdf.acsm?id&#x3D;6cyyCwAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;6cyyCwAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Manon et Alexandre sont à Nice chez les Mages Noirs.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;tg_VDQAAQBAJ&quot;,
+              &quot;etag&quot;: &quot;myIo63FXO3U&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/tg_VDQAAQBAJ&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Jean-François Piège pour tous&quot;,
+                &quot;authors&quot;: [
+                  &quot;Jean-François Piège&quot;
+                ],
+                &quot;publisher&quot;: &quot;Hachette Pratique&quot;,
+                &quot;publishedDate&quot;: &quot;2016-11-30&quot;,
+                &quot;description&quot;: &quot;Jean-François Piège vous fait entrer dans sa cuisine personnelle et vous invite à sa table. Il propose un ouvrage qui sort totalement des codes du livre de cuisine de chef : Jean-François Piège se met en effet au niveau des amateurs de cuisine que nous sommes et livre 80 recettes ultra-faciles à réaliser au fil des saisons dans une cuisine non professionnelle, sans matériel spécifique, avec quelques ingrédients que vous trouverez dans votre réfrigérateur ou votre placard, mais avec une vraie touche de chef. Des recettes pour tous les jours et tous les goûts, rapides et originales pour faire de vous un chef !&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782016255971&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2016255978&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 256,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Cooking&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;1.2.1.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;tg_VDQAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;tg_VDQAAQBAJ&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;tg_VDQAAQBAJ&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;9&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;tg_VDQAAQBAJ&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;tg_VDQAAQBAJ&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 16.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 16.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;tg_VDQAAQBAJ&amp;rdid&#x3D;book-tg_VDQAAQBAJ&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 16990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 16990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Jean_Fran%C3%A7ois_Pi%C3%A8ge_pour_tous-sample-epub.acsm?id&#x3D;tg_VDQAAQBAJ&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Jean_Fran%C3%A7ois_Pi%C3%A8ge_pour_tous-sample-pdf.acsm?id&#x3D;tg_VDQAAQBAJ&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;tg_VDQAAQBAJ&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Jean-François Piège vous fait entrer dans sa cuisine personnelle et vous invite à sa table.&quot;
+              }
+            },
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;qTdNb2qt9EoC&quot;,
+              &quot;etag&quot;: &quot;kezzrOHpRKo&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/qTdNb2qt9EoC&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Piège (Le)&quot;,
+                &quot;subtitle&quot;: &quot;Helsinki et la chute du communisme&quot;,
+                &quot;authors&quot;: [
+                  &quot;Jacques Andréani&quot;
+                ],
+                &quot;publisher&quot;: &quot;Odile Jacob&quot;,
+                &quot;publishedDate&quot;: &quot;2005-09&quot;,
+                &quot;description&quot;: &quot;Pourquoi l’URSS a-t-elle accepté de se prêter au jeu de ce qui allait devenir « la détente » ? Quel rôle ce processus diplomatique a-t-il joué dans la chute du communisme ? Le 1er août 1975, à Helsinki, trente-cinq chefs d’État et de gouvernement ont signé l’Acte final de la Conférence pour la sécurité et la coopération en Europe. Soixante pages qui couronnaient trois ans de négociations. Soixante pages qui instauraient un nouveau cours dans les relations entre l’Est et l’Ouest. Soixante pages qui ont modifié le cours de l’histoire. L’un de ses acteurs retrace ce moment clé des relations internationales après Yalta. Il en dresse le bilan à l’aune des défis actuels et s’interroge sur l’efficacité de la diplomatie aujourd’hui encore. Jacques Andréani est ambassadeur de France. Il a dirigé la délégation française qui a préparé la conférence d’Helsinki et a notamment publié L’Amérique et nous.&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2738116485&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782738116482&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: false,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 276,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Communism&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: false,
+                &quot;contentVersion&quot;: &quot;0.5.5.0.preview.1&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;qTdNb2qt9EoC&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;qTdNb2qt9EoC&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;qTdNb2qt9EoC&amp;printsec&#x3D;frontcover&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;cd&#x3D;10&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;http://books.google.fr/books?id&#x3D;qTdNb2qt9EoC&amp;dq&#x3D;intitle:pi%C3%A8ge&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://books.google.com/books/about/Pi%C3%A8ge_Le.html?hl&#x3D;&amp;id&#x3D;qTdNb2qt9EoC&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;NOT_FOR_SALE&quot;,
+                &quot;isEbook&quot;: false
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: false
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Pi%C3%A8ge_Le-sample-pdf.acsm?id&#x3D;qTdNb2qt9EoC&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;qTdNb2qt9EoC&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Il en dresse le bilan à l’aune des défis actuels et s’interroge sur l’efficacité de la diplomatie aujourd’hui encore. Jacques Andréani est ambassadeur de France.&quot;
+              }
+            }
+          ]
+        }
+        </code></pre>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-3d20f9be-86b1-48ec-823e-363970213c47">Copy to Clipboard</button>
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card border-info">
+                                <div class="card-body">
+                                <h5 class="card-title text-uppercase text-white text-center bg-info">Test Information</h5>
+                                    <div class="table-responsive text-nowrap">
+                                        <table class="datatable table table-hover">
+                                        <thead><tr class="text-center"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th></tr></thead>
+                                            <tbody>
+                                                <tr >
+                                                    <td >statut titre</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                                <tr >
+                                                    <td >titre est un string</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                                <tr >
+                                                    <td >titre contient mot clé</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr class="bg-light">
+                                                    <td><strong>Total</strong></td>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">0</td>
+                                                    <td class="text-center">0</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="row d-none">
+                                    <div class="col-sm-12 mb-3">
+                                        <div class="card-deck">
+                                        <div class="card border-danger" style="width: 50rem;">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failure</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                    <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div id="folder-defdd296-07c4-4068-a4a6-e92b574bd35b" class="card-deck iteration-0">
+            <div class="row iteration-0">
+                <div class="col-sm-12 mb-3 iteration-0">
+                <div class="card iteration-0">
+                    <div class="card-header  bg-success iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-defdd296-07c4-4068-a4a6-e92b574bd35b" aria-expanded="false" aria-controls="collapse" id="requests-defdd296-07c4-4068-a4a6-e92b574bd35b" class="collapsed text-white z-block">
+                    Iteration: 1 - recherche par auteur <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
+                </a>
+                    </div>
+                    <div id="collapse-defdd296-07c4-4068-a4a6-e92b574bd35b" class="collapse" aria-labelledby="requests-defdd296-07c4-4068-a4a6-e92b574bd35b">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Request Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request Method:</strong> <span class="badge-outline-success badge badge-success"> GET</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request URL:</strong> <a href="https://www.googleapis.com/books/v1/volumes?q&#x3D;inauthor:catherine+Rambert&amp;maxResults&#x3D;1" target="_blank">https://www.googleapis.com/books/v1/volumes?q&#x3D;inauthor:catherine+Rambert&amp;maxResults&#x3D;1</a><br>
+                                    </div>
+                                </div>
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 301ms</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 4.59KB</span><br>
+                                    <hr>
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
+                                    <div>
+                                        <div class="progress" style="height: 40px;">
+                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase text-white text-center bg-info">Request Headers</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                            <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-nowrap">User-Agent</td>
+                                                        <td class="text-wrap">PostmanRuntime/7.29.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept</td>
+                                                        <td class="text-wrap">*/*</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Cache-Control</td>
+                                                        <td class="text-wrap">no-cache</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Postman-Token</td>
+                                                        <td class="text-wrap">db4dc9b5-ba23-4c62-995a-2cff279f0f02</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Host</td>
+                                                        <td class="text-wrap">www.googleapis.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept-Encoding</td>
+                                                        <td class="text-wrap">gzip, deflate, br</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Connection</td>
+                                                        <td class="text-wrap">keep-alive</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Headers</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                        <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Type</td>
+                                                    <td class="text-wrap">application/json; charset&#x3D;UTF-8</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">Origin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">X-Origin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">Referer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Encoding</td>
+                                                    <td class="text-wrap">gzip</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Date</td>
+                                                    <td class="text-wrap">Fri, 12 May 2023 09:43:08 GMT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Server</td>
+                                                    <td class="text-wrap">ESF</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Cache-Control</td>
+                                                    <td class="text-wrap">private</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-XSS-Protection</td>
+                                                    <td class="text-wrap">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-Frame-Options</td>
+                                                    <td class="text-wrap">SAMEORIGIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-Content-Type-Options</td>
+                                                    <td class="text-wrap">nosniff</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Alt-Svc</td>
+                                                    <td class="text-wrap">h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Transfer-Encoding</td>
+                                                    <td class="text-wrap">chunked</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
+                                        <div class="dyn-height">
+                                                <pre><code id="copyText-5ff6efee-19ed-4e73-b36c-e400967797c5" class="prettyPrint">{
+          &quot;kind&quot;: &quot;books#volumes&quot;,
+          &quot;totalItems&quot;: 169,
+          &quot;items&quot;: [
+            {
+              &quot;kind&quot;: &quot;books#volume&quot;,
+              &quot;id&quot;: &quot;JOLYeFdoCZ4C&quot;,
+              &quot;etag&quot;: &quot;4R+1QB7QnvE&quot;,
+              &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/JOLYeFdoCZ4C&quot;,
+              &quot;volumeInfo&quot;: {
+                &quot;title&quot;: &quot;Petite philosophie pour surmonter les crises&quot;,
+                &quot;authors&quot;: [
+                  &quot;Catherine Rambert&quot;
+                ],
+                &quot;publisher&quot;: &quot;Editions 1&quot;,
+                &quot;publishedDate&quot;: &quot;2009-10-21&quot;,
+                &quot;description&quot;: &quot;365 pensées optimistes pour retrouver l’espoir Crise planétaire, crises personnelles... Comment rester optimiste quand les orages perturbent notre vie ? Comment garder le moral, trouver des raisons de relativiser ou d’espérer, quand tout nous incite au contraire ? Comment trouver en soi les ressources pour garder espoir, rebondir et se réinventer ? Comment être heureux et envisager l’avenir sans angoisse ? Petite philosophie pour surmonter les crises propose 365 réflexions, aphorismes, phrases à méditer, stratégies à adopter au quotidien pour franchir les obstacles dans les moments difficiles. Tour à tour empreint de sagesse, d’espoir, de gaieté et même d’ironie, cet ouvrage dispense de précieux conseils pour nous aider à prendre du recul, à nous réinventer après l’échec, et trouver, chaque jour, une occasion de mieux maîtriser le cours de notre vie.&quot;,
+                &quot;industryIdentifiers&quot;: [
+                  {
+                    &quot;type&quot;: &quot;ISBN_13&quot;,
+                    &quot;identifier&quot;: &quot;9782846123983&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;ISBN_10&quot;,
+                    &quot;identifier&quot;: &quot;2846123985&quot;
+                  }
+                ],
+                &quot;readingModes&quot;: {
+                  &quot;text&quot;: true,
+                  &quot;image&quot;: true
+                },
+                &quot;pageCount&quot;: 392,
+                &quot;printType&quot;: &quot;BOOK&quot;,
+                &quot;categories&quot;: [
+                  &quot;Fiction&quot;
+                ],
+                &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+                &quot;allowAnonLogging&quot;: true,
+                &quot;contentVersion&quot;: &quot;2.4.4.0.preview.3&quot;,
+                &quot;panelizationSummary&quot;: {
+                  &quot;containsEpubBubbles&quot;: false,
+                  &quot;containsImageBubbles&quot;: false
+                },
+                &quot;imageLinks&quot;: {
+                  &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;,
+                  &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;language&quot;: &quot;fr&quot;,
+                &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;dq&#x3D;inauthor:catherine+Rambert&amp;hl&#x3D;&amp;cd&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;JOLYeFdoCZ4C&amp;source&#x3D;gbs_api&quot;,
+                &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;JOLYeFdoCZ4C&quot;
+              },
+              &quot;saleInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+                &quot;isEbook&quot;: true,
+                &quot;listPrice&quot;: {
+                  &quot;amount&quot;: 6.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amount&quot;: 6.99,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;JOLYeFdoCZ4C&amp;rdid&#x3D;book-JOLYeFdoCZ4C&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+                &quot;offers&quot;: [
+                  {
+                    &quot;finskyOfferType&quot;: 1,
+                    &quot;listPrice&quot;: {
+                      &quot;amountInMicros&quot;: 6990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;retailPrice&quot;: {
+                      &quot;amountInMicros&quot;: 6990000,
+                      &quot;currencyCode&quot;: &quot;EUR&quot;
+                    },
+                    &quot;giftable&quot;: true
+                  }
+                ]
+              },
+              &quot;accessInfo&quot;: {
+                &quot;country&quot;: &quot;FR&quot;,
+                &quot;viewability&quot;: &quot;PARTIAL&quot;,
+                &quot;embeddable&quot;: true,
+                &quot;publicDomain&quot;: false,
+                &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+                &quot;epub&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Petite_philosophie_pour_surmonter_les_cr-sample-epub.acsm?id&#x3D;JOLYeFdoCZ4C&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;pdf&quot;: {
+                  &quot;isAvailable&quot;: true,
+                  &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Petite_philosophie_pour_surmonter_les_cr-sample-pdf.acsm?id&#x3D;JOLYeFdoCZ4C&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+                },
+                &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;JOLYeFdoCZ4C&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+                &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+                &quot;quoteSharingAllowed&quot;: false
+              },
+              &quot;searchInfo&quot;: {
+                &quot;textSnippet&quot;: &quot;Petite philosophie pour surmonter les crises propose 365 réflexions, aphorismes, phrases à méditer, stratégies à adopter au quotidien pour franchir les obstacles dans les moments difficiles.&quot;
+              }
+            }
+          ]
+        }
+        </code></pre>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-5ff6efee-19ed-4e73-b36c-e400967797c5">Copy to Clipboard</button>
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card border-info">
+                                <div class="card-body">
+                                <h5 class="card-title text-uppercase text-white text-center bg-info">Test Information</h5>
+                                    <div class="table-responsive text-nowrap">
+                                        <table class="datatable table table-hover">
+                                        <thead><tr class="text-center"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th></tr></thead>
+                                            <tbody>
+                                                <tr >
+                                                    <td >Status code is 200</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                                <tr >
+                                                    <td >titre est un string</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                                <tr >
+                                                    <td >titre contient mot clé</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr class="bg-light">
+                                                    <td><strong>Total</strong></td>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">0</td>
+                                                    <td class="text-center">0</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="row d-none">
+                                    <div class="col-sm-12 mb-3">
+                                        <div class="card-deck">
+                                        <div class="card border-danger" style="width: 50rem;">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failure</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                    <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="alert alert-dark text-uppercase text-center iteration-0">
+        <a data-toggle="collapse" href="#" data-target="#folder-collapse-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0" aria-expanded="false" aria-controls="collapse" id="folder-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0" class="collapsed text-dark z-block">
+        <i class="fas fa-info-circle float-left resultsInfoPass" ></i>
+            Get  Books - 1 Request in the folder<i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
+        </a>
+        </div>
+        <div id="folder-collapse-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0" class="collapse" aria-labelledby="folder-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd">
+            <div id="folder-ce2cd903-1a40-44bd-b53c-c989aef8d805" class="card-deck iteration-0">
+            <div class="row iteration-0">
+                <div class="col-sm-12 mb-3 iteration-0">
+                <div class="card iteration-0">
+                    <div class="card-header  bg-success iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805" aria-expanded="false" aria-controls="collapse" id="requests-ce2cd903-1a40-44bd-b53c-c989aef8d805" class="collapsed text-white z-block">
+                    Iteration: 1 - Recherche détail <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
+                </a>
+                    </div>
+                    <div id="collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805" class="collapse" aria-labelledby="requests-ce2cd903-1a40-44bd-b53c-c989aef8d805">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Request Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request Method:</strong> <span class="badge-outline-success badge badge-success"> GET</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request URL:</strong> <a href="https://www.googleapis.com/books/v1/volumes/JOLYeFdoCZ4C" target="_blank">https://www.googleapis.com/books/v1/volumes/JOLYeFdoCZ4C</a><br>
+                                    </div>
+                                </div>
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 161ms</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 5.56KB</span><br>
+                                    <hr>
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
+                                    <div>
+                                        <div class="progress" style="height: 40px;">
+                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase text-white text-center bg-info">Request Headers</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                            <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-nowrap">User-Agent</td>
+                                                        <td class="text-wrap">PostmanRuntime/7.29.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept</td>
+                                                        <td class="text-wrap">*/*</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Cache-Control</td>
+                                                        <td class="text-wrap">no-cache</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Postman-Token</td>
+                                                        <td class="text-wrap">19928578-4187-45aa-adf9-a21ba1cf9c20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Host</td>
+                                                        <td class="text-wrap">www.googleapis.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept-Encoding</td>
+                                                        <td class="text-wrap">gzip, deflate, br</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Connection</td>
+                                                        <td class="text-wrap">keep-alive</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Headers</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                        <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Type</td>
+                                                    <td class="text-wrap">application/json; charset&#x3D;UTF-8</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">Origin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">X-Origin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td class="text-wrap">Referer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Encoding</td>
+                                                    <td class="text-wrap">gzip</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Date</td>
+                                                    <td class="text-wrap">Fri, 12 May 2023 09:43:08 GMT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Server</td>
+                                                    <td class="text-wrap">ESF</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Cache-Control</td>
+                                                    <td class="text-wrap">private</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-XSS-Protection</td>
+                                                    <td class="text-wrap">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-Frame-Options</td>
+                                                    <td class="text-wrap">SAMEORIGIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">X-Content-Type-Options</td>
+                                                    <td class="text-wrap">nosniff</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Alt-Svc</td>
+                                                    <td class="text-wrap">h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Transfer-Encoding</td>
+                                                    <td class="text-wrap">chunked</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
+                                        <div class="dyn-height">
+                                                <pre><code id="copyText-0dab9acb-4fd1-4d2a-adb2-93b43497ed8c" class="prettyPrint">{
+          &quot;kind&quot;: &quot;books#volume&quot;,
+          &quot;id&quot;: &quot;JOLYeFdoCZ4C&quot;,
+          &quot;etag&quot;: &quot;F6p+thF9nJE&quot;,
+          &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/JOLYeFdoCZ4C&quot;,
+          &quot;volumeInfo&quot;: {
+            &quot;title&quot;: &quot;Petite philosophie pour surmonter les crises&quot;,
+            &quot;authors&quot;: [
+              &quot;Catherine Rambert&quot;
+            ],
+            &quot;publisher&quot;: &quot;Editions 1&quot;,
+            &quot;publishedDate&quot;: &quot;2009-10-21&quot;,
+            &quot;description&quot;: &quot;\u003cp\u003e365 pensées optimistes pour retrouver l’espoir\u003c/p\u003e\u003cp\u003eCrise planétaire, crises personnelles... \u003cbr\u003eComment rester optimiste quand les orages perturbent notre vie ? \u003cbr\u003eComment garder le moral, trouver des raisons de relativiser ou d’espérer, quand tout nous incite au contraire ? \u003cbr\u003eComment trouver en soi les ressources pour garder espoir, rebondir et se réinventer ? \u003cbr\u003eComment être heureux et envisager l’avenir sans angoisse ?\u003c/p\u003e\u003cp\u003e\u003ci\u003ePetite philosophie pour surmonter les crises propose\u003c/i\u003e 365 réflexions, aphorismes, phrases à méditer, stratégies à adopter au quotidien pour franchir les obstacles dans les moments difficiles. \u003cbr\u003eTour à tour empreint de sagesse, d’espoir, de gaieté et même d’ironie, cet ouvrage dispense de précieux conseils pour nous aider à prendre du recul, à nous réinventer après l’échec, et trouver, chaque jour, une occasion de mieux maîtriser le cours de notre vie.\u003c/p\u003e&quot;,
+            &quot;industryIdentifiers&quot;: [
+              {
+                &quot;type&quot;: &quot;ISBN_10&quot;,
+                &quot;identifier&quot;: &quot;2846123985&quot;
+              },
+              {
+                &quot;type&quot;: &quot;ISBN_13&quot;,
+                &quot;identifier&quot;: &quot;9782846123983&quot;
+              }
+            ],
+            &quot;readingModes&quot;: {
+              &quot;text&quot;: true,
+              &quot;image&quot;: true
+            },
+            &quot;pageCount&quot;: 392,
+            &quot;printedPageCount&quot;: 389,
+            &quot;printType&quot;: &quot;BOOK&quot;,
+            &quot;categories&quot;: [
+              &quot;Philosophy / General&quot;
+            ],
+            &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+            &quot;allowAnonLogging&quot;: true,
+            &quot;contentVersion&quot;: &quot;2.4.4.0.preview.3&quot;,
+            &quot;panelizationSummary&quot;: {
+              &quot;containsEpubBubbles&quot;: false,
+              &quot;containsImageBubbles&quot;: false
+            },
+            &quot;imageLinks&quot;: {
+              &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;5&amp;edge&#x3D;curl&amp;imgtk&#x3D;AFLRE72j9BGmXLMM3e0Y1PnSH-xV9Ey2vuPlVKgURjeZ3vjjRW3U27bEvXn64rmEWVswuZKl6PUaKKrX0otPXf5XftUZDge51mqMKJWzzBpZG4Vn-dQy3duQgsqVU-OclReDD5_kTDhv&amp;source&#x3D;gbs_api&quot;,
+              &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;1&amp;edge&#x3D;curl&amp;imgtk&#x3D;AFLRE73jQTfkzmv6kt5x5DonLDFwd5T2kKZ_CBsjLrkMqZaLz4SXMPBDUAqiRQaqQZJgHs2dvqw6QamTVKxX1uwaZT_gvpSZG1AK069q-Ya2uxvhP-bkDC4M127spJy6TXqZ5iq3zDfH&amp;source&#x3D;gbs_api&quot;,
+              &quot;small&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;2&amp;edge&#x3D;curl&amp;imgtk&#x3D;AFLRE70AGg0fqI7p0m8ezAprvTozUqP9U3f-TnKGiSnfakUltFxZ80q0UeAfnLP2yN57DixXdYkG2hgqbZDyvFMvYxWyMzMFAf-EQBqfBAy8IkatW8zjuo2fOIj5ai0XPWzN5i5VRsoi&amp;source&#x3D;gbs_api&quot;,
+              &quot;medium&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;3&amp;edge&#x3D;curl&amp;imgtk&#x3D;AFLRE71nUTY_eYyufb0R_V8-c3h2T0cmQXA1dBzJUOSI-Otzp6utY9oxp-MuAZGGFdGlS-5aFX_mn9WvIXx-5DPz05vo8M3YjBpEI5KFfsyKd4MoyGo5alaBpyFCxLF2GrxvOes56SJ_&amp;source&#x3D;gbs_api&quot;,
+              &quot;large&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;4&amp;edge&#x3D;curl&amp;imgtk&#x3D;AFLRE71FlNsJy1_UfMvY_v0U4MkeJpasMHOAo3BUSouzmCxzcqsTm3C5RwMB-RFyTzx7ZfSxn2oRZFtCYknmO90n5SbcL3ZowxajEmlvKZSEjVAAgJetyMGBD7iHbuzCGZ8ehqEQ-A7_&amp;source&#x3D;gbs_api&quot;,
+              &quot;extraLarge&quot;: &quot;http://books.google.com/books/content?id&#x3D;JOLYeFdoCZ4C&amp;printsec&#x3D;frontcover&amp;img&#x3D;1&amp;zoom&#x3D;6&amp;edge&#x3D;curl&amp;imgtk&#x3D;AFLRE72HCSBAL4fkAfzm_r5n8nhH4TJ8OCFW8-w5mUCEmpk5OBgBuNX7UG8MMngswuYwMupjTCHafTsqxNaA17bAc47sXatiL9YCjn8q-OVkA3_Gkb0fDqtDOaO4UM8MO8CLelZrOEap&amp;source&#x3D;gbs_api&quot;
+            },
+            &quot;language&quot;: &quot;fr&quot;,
+            &quot;previewLink&quot;: &quot;http://books.google.fr/books?id&#x3D;JOLYeFdoCZ4C&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+            &quot;infoLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;JOLYeFdoCZ4C&amp;source&#x3D;gbs_api&quot;,
+            &quot;canonicalVolumeLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;JOLYeFdoCZ4C&quot;
+          },
+          &quot;layerInfo&quot;: {
+            &quot;layers&quot;: [
+              {
+                &quot;layerId&quot;: &quot;geo&quot;,
+                &quot;volumeAnnotationsVersion&quot;: &quot;7&quot;
+              }
+            ]
+          },
+          &quot;saleInfo&quot;: {
+            &quot;country&quot;: &quot;FR&quot;,
+            &quot;saleability&quot;: &quot;FOR_SALE&quot;,
+            &quot;isEbook&quot;: true,
+            &quot;listPrice&quot;: {
+              &quot;amount&quot;: 6.99,
+              &quot;currencyCode&quot;: &quot;EUR&quot;
+            },
+            &quot;retailPrice&quot;: {
+              &quot;amount&quot;: 6.99,
+              &quot;currencyCode&quot;: &quot;EUR&quot;
+            },
+            &quot;buyLink&quot;: &quot;https://play.google.com/store/books/details?id&#x3D;JOLYeFdoCZ4C&amp;rdid&#x3D;book-JOLYeFdoCZ4C&amp;rdot&#x3D;1&amp;source&#x3D;gbs_api&quot;,
+            &quot;offers&quot;: [
+              {
+                &quot;finskyOfferType&quot;: 1,
+                &quot;listPrice&quot;: {
+                  &quot;amountInMicros&quot;: 6990000,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;retailPrice&quot;: {
+                  &quot;amountInMicros&quot;: 6990000,
+                  &quot;currencyCode&quot;: &quot;EUR&quot;
+                },
+                &quot;giftable&quot;: true
+              }
+            ]
+          },
+          &quot;accessInfo&quot;: {
+            &quot;country&quot;: &quot;FR&quot;,
+            &quot;viewability&quot;: &quot;PARTIAL&quot;,
+            &quot;embeddable&quot;: true,
+            &quot;publicDomain&quot;: false,
+            &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+            &quot;epub&quot;: {
+              &quot;isAvailable&quot;: true,
+              &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Petite_philosophie_pour_surmonter_les_cr-sample-epub.acsm?id&#x3D;JOLYeFdoCZ4C&amp;format&#x3D;epub&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+            },
+            &quot;pdf&quot;: {
+              &quot;isAvailable&quot;: true,
+              &quot;acsTokenLink&quot;: &quot;http://books.google.fr/books/download/Petite_philosophie_pour_surmonter_les_cr-sample-pdf.acsm?id&#x3D;JOLYeFdoCZ4C&amp;format&#x3D;pdf&amp;output&#x3D;acs4_fulfillment_token&amp;dl_type&#x3D;sample&amp;source&#x3D;gbs_api&quot;
+            },
+            &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id&#x3D;JOLYeFdoCZ4C&amp;hl&#x3D;&amp;source&#x3D;gbs_api&quot;,
+            &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+            &quot;quoteSharingAllowed&quot;: false
+          }
+        }
+        </code></pre>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-0dab9acb-4fd1-4d2a-adb2-93b43497ed8c">Copy to Clipboard</button>
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card border-info">
+                                <div class="card-body">
+                                <h5 class="card-title text-uppercase text-white text-center bg-info">Test Information</h5>
+                                    <div class="table-responsive text-nowrap">
+                                        <table class="datatable table table-hover">
+                                        <thead><tr class="text-center"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th></tr></thead>
+                                            <tbody>
+                                                <tr >
+                                                    <td >statut titre</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                                <tr >
+                                                    <td >titre est un string</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                                <tr >
+                                                    <td >Auteur contient bon nom</td>
+                                                    <td class="text-center bg-success">1</td>
+                                                    <td class="text-center ">0</td>
+                                                    <td class="text-center ">0</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr class="bg-light">
+                                                    <td><strong>Total</strong></td>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">0</td>
+                                                    <td class="text-center">0</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="row d-none">
+                                    <div class="col-sm-12 mb-3">
+                                        <div class="card-deck">
+                                        <div class="card border-danger" style="width: 50rem;">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failure</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                    <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Set slider initial position depending on the localstorage state -->
+
+<script>
+(function () {
+  var sliderChecked = true;
+  if (localStorage.getItem('theme') === 'theme-light') {
+    setTheme('theme-light');
+    sliderChecked = false;
+  } else {
+    setTheme('theme-dark');
+    sliderChecked = true;
+  }
+  $(document).ready( function () {
+    document.getElementById('slider').checked = sliderChecked;
+  });
+})();
+</script>
+
+<!-- Data Table Configuration -->
+
+<script>
+$(document).ready( function () {
+    $('.datatable').DataTable({
+        "retrieve": true,
+        "paging": false,
+        "info": false,
+        "fixedColumns":   {
+            "heightMatch": 'none'
+        }
+    });
+});
+</script>
+
+<!-- Tooltip Configuration -->
+
+<script>
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger : 'hover'
+    })
+})
+</script>
+
+<!-- Show/Hide The Folders -->
+
+<script>
+$('#openAll').on('click', function(e) {
+let clickCount = $(this).data("clickCount") || 1
+switch (clickCount){
+    case 1:
+            $('#folder-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0').removeClass('collapsed')
+            $('#folder-collapse-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0').addClass('show')
+            $('#folder-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0').removeClass('collapsed')
+            $('#folder-collapse-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0').addClass('show')
+        $('#openAll').html("Collapse Folders");
+        break;
+    case 2:
+            $('#folder-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0').addClass('collapsed')
+            $('#folder-collapse-d40c0cbe-6b25-4835-ae30-f8516b1a1dc3-iteration-0').removeClass('show')
+            $('#folder-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0').addClass('collapsed')
+            $('#folder-collapse-a912c4c5-889f-45af-a7f9-5e97e6e3a5cd-iteration-0').removeClass('show')
+        $('#openAll').html("Expand Folders");
+        break;
+}
+clickCount = clickCount > 1 ? 1 : ++clickCount;
+$(this).data("clickCount", clickCount)
+})
+</script>
+
+<!-- Show/Hide The Requests -->
+
+<script>
+$('#openAllRequests').on('click', function(e) {
+let clickCount = $(this).data("clickCount") || 1
+switch (clickCount){
+    case 1:
+            $('#requests-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('collapsed')
+            $('#collapse-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('collapsed')
+            $('#requests-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('show')
+            $('#collapse-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('show')
+            $('#requests-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('collapsed')
+            $('#collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('collapsed')
+            $('#requests-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('show')
+            $('#collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('show')
+            $('#requests-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('collapsed')
+            $('#collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('collapsed')
+            $('#requests-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('show')
+            $('#collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('show')
+        $('#openAllRequests').html("Collapse Requests");
+        break;
+    case 2:
+            $('#requests-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('collapsed')
+            $('#collapse-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('collapsed')
+            $('#requests-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('show')
+            $('#collapse-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('show')
+            $('#requests-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('collapsed')
+            $('#collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('collapsed')
+            $('#requests-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('show')
+            $('#collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('show')
+            $('#requests-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('collapsed')
+            $('#collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('collapsed')
+            $('#requests-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('show')
+            $('#collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('show')
+        $('#openAllRequests').html("Expand Requests");
+        break;
+}
+clickCount = clickCount > 1 ? 1 : ++clickCount;
+$(this).data("clickCount", clickCount)
+})
+</script>
+
+<!-- Show/Hide The Skipped Tests -->
+
+<script>
+$('#openAllSkipped').on('click', function(e) {
+let clickCount = $(this).data("clickCount") || 1
+switch (clickCount){
+    case 1:
+            $('#skipped-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('collapsed')
+            $('#skipped-collapse-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('collapsed')
+            $('#skipped-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('show')
+            $('#skipped-collapse-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('show')
+            $('#skipped-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('collapsed')
+            $('#skipped-collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('collapsed')
+            $('#skipped-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('show')
+            $('#skipped-collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('show')
+            $('#skipped-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('collapsed')
+            $('#skipped-collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('collapsed')
+            $('#skipped-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('show')
+            $('#skipped-collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('show')
+        $('#openAllSkipped').html("Collapse All Skipped Tests");
+        break;
+    case 2:
+            $('#skipped-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('collapsed')
+            $('#skipped-collapse-92c77284-e1c9-491f-a673-f028a78a1b29').addClass('collapsed')
+            $('#skipped-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('show')
+            $('#skipped-collapse-92c77284-e1c9-491f-a673-f028a78a1b29').removeClass('show')
+            $('#skipped-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('collapsed')
+            $('#skipped-collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').addClass('collapsed')
+            $('#skipped-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('show')
+            $('#skipped-collapse-defdd296-07c4-4068-a4a6-e92b574bd35b').removeClass('show')
+            $('#skipped-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('collapsed')
+            $('#skipped-collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').addClass('collapsed')
+            $('#skipped-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('show')
+            $('#skipped-collapse-ce2cd903-1a40-44bd-b53c-c989aef8d805').removeClass('show')
+        $('#openAllSkipped').html("Expand All Skipped Tests");
+        break;
+}
+clickCount = clickCount > 1 ? 1 : ++clickCount;
+$(this).data("clickCount", clickCount)
+})
+</script>
+
+<!-- Show/Hide The Failures -->
+
+<script>
+$('#openAllFailed').on('click', function(e) {
+let clickCount = $(this).data("clickCount") || 1
+let failedItemContent
+let failedItemHeading
+switch (clickCount){
+    case 1:
+        $('#openAllFailed').html("Collapse All Failed Tests");
+        break;
+    case 2:
+        $('#openAllFailed').html("Expand All Failed Tests");
+        break;
+}
+clickCount = clickCount > 1 ? 1 : ++clickCount;
+$(this).data("clickCount", clickCount)
+})
+</script>
+
+<!-- Pretty Print the Response Body-->
+
+<script>
+function isJSON(data)
+{
+    var ret = true;
+    try {
+            JSON.parse(data);
+    }catch(e) {
+            ret = false;
+    }
+    return ret;
+}
+
+function isXML(data)
+{
+    return (data.length > 0 && data[0] === '<');
+}
+
+// see https://gist.github.com/sente/1083506/d2834134cd070dbcc08bf42ee27dabb746a1c54d#gistcomment-2254622
+function formatXML(data) {
+    const PADDING = ' '.repeat(2); // set desired indent size here
+    const reg = /(>)(<)(\/*)/g;
+    let pad = 0;
+    xml = data.replace(reg, '$1\r\n$2$3');
+
+    return xml.split('\r\n').map((node, index) => {
+        let indent = 0;
+        if (node.match(/.+<\/\w[^>]*>$/)) {
+            indent = 0;
+        } else if (node.match(/^<\/\w/) && pad > 0) {
+            pad -= 1;
+        } else if (node.match(/^<\w[^>]*[^\/]>.*$/)) {
+            indent = 1;
+        } else {
+            indent = 0;
+        }
+
+        pad += indent;
+        return PADDING.repeat(pad - indent) + node;
+    }).join('\r\n');
+}
+
+$(".prettyPrint").each(function () {
+        var data = $(this).text();
+        // Verify whether data is JSON
+        if(isJSON(data))
+        {
+                obj = JSON.parse(data);
+                data = JSON.stringify(obj, null, 2);
+        }
+        else if(isXML(data)) {
+            data = formatXML(data);
+        }
+        $(this).text(data);
+});
+</script>
+
+
+<!-- Copy Response Body To Clipboard -->
+
+<script>
+    var clipboard = new ClipboardJS('.copyButton');
+
+    clipboard.on('success', function(e) {
+        e.clearSelection();
+        $(".copyButton").addClass("bg-success text-white")
+        e.trigger.textContent = '✔ Copied!';
+        window.setTimeout(function() {
+            $(".copyButton").removeClass("bg-success text-white")
+            e.trigger.textContent = 'Copy to Clipboard';
+        }, 2000);
+    });
+    clipboard.on('error', function(e) {
+        e.clearSelection();
+        $(".copyButton").addClass("bg-danger text-white")
+        e.trigger.textContent = '✗ Not Copied';
+        window.setTimeout(function() {
+            $(".copyButton").removeClass("bg-danger text-white")
+            e.trigger.textContent = 'Copy to Clipboard';
+        }, 2000);
+    });
+
+</script>
+
+<!-- Render the Description Markdown and link in the test failures -->
+
+<script>
+    const remarkable = new Remarkable();
+
+    const descriptions = document.querySelectorAll(".renderMarkdown");
+    descriptions.forEach(description => {
+        description.innerHTML = renderHtmlFromMarkdown(description.textContent);
+    });
+    function renderHtmlFromMarkdown(markdown) {
+        return remarkable.render(trim(markdown));
+    }
+    function trim(string) {
+        return string ? string.replace(/^ +| +$/gm, "") : string;
+    }
+</script>
+
+<!-- Show/Hide The Toggles When Scrolling The Page -->
+
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topOfRequestsScreen").style.display = "block";
+    document.getElementById("topOfFailuresScreen").style.display = "block";
+    document.getElementById("topOfSkippedScreen").style.display = "block";
+    document.getElementById("openAll").style.display = "none";
+    document.getElementById("openAllRequests").style.display = "none";
+
+
+  } else {
+    document.getElementById("topOfRequestsScreen").style.display = "none";
+    document.getElementById("topOfFailuresScreen").style.display = "none";
+    document.getElementById("topOfSkippedScreen").style.display = "none";
+    document.getElementById("openAll").style.display = "block";
+    document.getElementById("openAllRequests").style.display = "block";
+
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<!-- Creates The Iteration Tabs -->
+
+<script type="text/javascript">
+    "use strict";
+
+window.onload = function () {
+
+  // set display for all blocks of response
+  var allItems = document.querySelectorAll('[class*=iteration-]');
+  allItems.forEach(function(elem){
+    elem.style.display = 'block';
+  });
+
+   
+  let totalIterations = 1;
+   
+
+  let menu = document.querySelector('#execution-menu .nav');
+
+  for(var i = 0; i < totalIterations; i++)
+  {
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode((i + 1)));
+    li.setAttribute('id', 'iteration-' + i);
+    li.classList.add("custom-tab");
+    li.classList.add("itPassed");
+
+    li.addEventListener('click', function() {
+      //set display to none for all except row
+      let allItems = document.querySelectorAll('[class*=iteration-]:not(.row)');
+      allItems.forEach(function(elem) {
+        elem.style.display = 'none';
+      })
+
+      let allMenus = document.querySelectorAll('[id*=iteration-]');
+      allMenus.forEach(function(elem){
+        elem.style.borderBottom = 'none';
+      })
+
+      this.style.borderBottom = 'solid 3px #032a33';
+
+      let items = document.querySelectorAll("." + this.id + ':not(.row)');
+      items.forEach(function(elem) {
+        elem.style.display = elem.style.display == 'block' ? 'none' : 'block';
+      })
+    });
+    menu.appendChild(li);
+  }
+
+  //shows first tab data
+  document.getElementById('iteration-0').click();
+  document.getElementById('iterationSelected').innerHTML = `Iteration ${document.getElementById('iteration-0').innerHTML} selected`
+
+}
+</script>
+
+<!-- Create the Selected Iteration Label -->
+
+<script>
+$(document).ready(function(){
+    $(function() {
+        $("#iterationList li").click(function() {
+            document.getElementById('iterationSelected').innerHTML = "Iteration " + this.innerHTML + " selected"
+        });
+    });
+});
+</script>
+
+<!-- Filter Action for the Iterations -->
+
+<script>
+$("#filterInput").on("input paste", function() {
+    var value = $(this).val();
+    $("#iterationList li").filter(function() {
+	    $("#showOnlyFailures").data("clickCount") ? $("#showOnlyFailures").click():null;
+        $(this).toggle($(this).text().indexOf(value) > -1)
+    });
+});
+</script>
+
+<!-- Showing the Failed Interations -->
+
+<script>
+$('#showOnlyFailures').on('click', function(e) {
+    let clickCount = $(this).data("clickCount") || 1
+	$("#filterInput").val()!="" && clickCount==1 ? $("#filterInput").val('').trigger('input'): null;
+    let selectedIteration = $('#iterationList li').filter(function () {
+        return $(this).css('border-bottom').indexOf("solid") > -1 && $(this).hasClass('itFailed');
+    });
+    selectedIteration.length || clickCount > 1 ? null : $("#iterationList li.itFailed")[0].click()
+    $("#iterationList li.itPassed").toggle()
+    $("div.bg-success [id*=requests]").parents('[class^="row iteration-"]').toggle();
+    clickCount = clickCount > 1 ? 1 : ++clickCount;
+    clickCount > 1 ? $("#showOnlyFailures").html("Show All Iterations") : $("#showOnlyFailures").html("Show Failed Iterations");
+    $(this).data("clickCount", clickCount)
+})
+</script>
+</body>
+</html>

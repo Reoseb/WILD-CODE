@@ -1,0 +1,362 @@
+#src Add embedded object
+#dst Adicionar objeto incorporado
+#end
+#src Data source
+#dst Fonte de dados
+#end
+#src Text table
+#dst Tabela de texto
+#end
+#src Add label
+#dst Adicionar marcador
+#end
+#src Add current value macro
+#dst Adicionar macro de valor atual
+#end
+#src Add embedded graph
+#dst Adicionar gráfico incorporado
+#end
+#src Add embedded image
+#dst Adicionar imagem incorporada
+#end
+#src use current template
+#dst Usar modelo atual
+#end
+#src use custom template
+#dst Usar modelo personalizado
+#end
+#src use static image
+#dst Usar imagem estática
+#end
+
+#src Embedded animated image settings
+#dst Configurações de imagens animadas incorporadas
+#end
+#src Image template
+#dst Modelo de imagem
+#end
+#src Image template properties
+#dst Propriedades do modelo de imagem
+#end
+#src Image width, in pixels or symbols if negative
+#dst Largura do sprite (píxeis ou símbolos se negativo)
+#end 
+#src Image height, in pixels or symbols if negative
+#dst Altura do sprite (píxeis ou símbolos se negativo)
+#end
+#src Sprite animation minimum, in data source units
+#dst Animação sprite mínima (unidades de fonte de dados)
+#end
+#src Sprite animation maximum, in data source units
+#dst Animação sprite máxima (unidades de fonte de dados)
+#end
+#src Sprite animation bias
+#dst Viés de animação do sprite
+#end
+#src Sprite X, in pixels
+#dst Sprite X (píxeis)
+#end
+#src Sprite Y, in pixels
+#dst Sprite Y (píxeis)
+#end
+#src Sprite width, in pixels
+#dst Largura do sprite (píxeis)
+#end
+#src Sprite height, in pixels
+#dst Altura do sprite (píxeis)
+#end
+#src Sprites number
+#dst Número de sprites
+#end
+#src Sprites number per line
+#dst Número de sprites por linha
+#end
+#src Resize image to layer extent
+#dst Redimensionar imagem no tamanho da camada
+#end
+
+#src Embedded graph settings
+#dst Configurações de gráfico incorporado
+#end
+#src Graph template
+#dst Modelo de gráfico
+#end
+#src Graph template properties
+#dst Propriedades do modelo de gráfico
+#end
+#src Graph width, in pixels or symbols if negative
+#dst Largura do gráfico (píxeis ou símbolos se negativo)
+#end 
+#src Graph height, in pixels or symbols if negative
+#dst Altura do gráfico (píxeis ou símbolos se negativo)
+#end
+#src Graph margin, in pixels
+#dst Margem do gráfico (píxeis)
+#end
+#src Graph minimum, in data source units
+#dst Gráfico mínimo (unidades de fonte de dados)
+#end
+#src Graph maximum, in data source units
+#dst Gráfico máximo (unidades de fonte de dados)
+#end
+#src Graph style
+#dst Estilo do gráfico
+#end
+#src Range minimum, in data source units
+#dst Limite mínimo (unidades de fonte de dados)
+#end
+#src Range maximum, in data source units
+#dst Limite máximo (unidades de fonte de dados)
+#end
+#src Autoscale graph
+#dst Gráfico em escala automática
+#end
+#src graph
+#dst Gráfico
+#end
+#src diagram
+#dst Diagrama
+#end
+#src barchart
+#dst Barras
+#end
+#src Graph background
+#dst Plano de fundo do gráfico
+#end
+#src enabled
+#dst Ativado
+#end
+#src disabled
+#dst Desativado
+#end
+#src Graph orientation
+#dst Orientação do gráfico
+#end
+#src horizontal
+#dst Horizontal
+#end
+#src vertical
+#dst Vertical
+#end
+#src Graph direction
+#dst Direção do gráfico
+#end
+#src normal
+#dst Normal
+#end
+#src mirrored
+#dst Espelhado
+#end
+#src Resize graph to layer extent
+#dst Redimensionar gráfico no tamanho da camada
+#end
+
+#src Embedded image settings
+#dst Configurações de imagem incorporada
+#end
+
+#src Layer properties
+#dst Configurações da camada
+#end
+#src Name
+#dst Nome
+#end 
+#src Hypertext
+#dst Hipertexto
+#end 
+#src Use custom text color
+#dst Usar cor de texto personalizada
+#end
+#src Use custom background color
+#dst Usar cor de fundo personalizada
+#end
+#src Text size, in percents
+#dst Tamanho do texto (%)
+#end
+#src Text alignment, in symbols, left or right if negative
+#dst Alinhamento (símbolos ou esquerdo/direito se negativo)
+#end
+#src Use fixed size alignment
+#dst Usar alinhamento de tamanho fixo
+#end
+#src Resize layer to content
+#dst Redimensionar camada no tamanho do conteúdo
+#end
+#src Manual extent origin
+#dst Origem manual da extensão 
+#end
+
+#src Add new data sources
+#dst Adicionar novas fontes de dados
+#end
+#src Data provider
+#dst Fornecedor de dados
+#end
+#src Export
+#dst Exportar
+#end
+
+#src Data source settings
+#dst Configurações da fonte de dados
+#end
+#src AIDA64 sensor properties
+#dst Propriedades do sensor AIDA64	
+#end
+#src ID
+#dst ID
+#end
+#src Overlay data source properties
+#dst Propriedades da fonte de dados de sobreposição
+#end
+#src Name
+#dst Nome
+#end
+#src Units
+#dst Unidade
+#end
+#src Format
+#dst formato
+#end
+#src Correction formula
+#dst Fórmula de correção
+#end
+
+#src HWiNFO64 sensor properties
+#dst Propriedades do sensor HWiNFO64
+#end
+#src Type
+#dst Tipo
+#end
+#src Instance
+#dst Instância
+#end
+
+#src MSI Afterburner sensor properties
+#dst Propriedades do sensor MSI Afterburner
+#end
+
+#src HAL sensor properties
+#dst Propriedades do sensor HAL
+#end
+
+#src Performance counter properties
+#dst Propriedades do contador de desempenho
+#end
+#src Object name
+#dst Nome do objeto
+#end
+#src Instance name or index
+#dst Nome ou índice da instância
+#end
+#src Counter name
+#dst Nome do contador
+#end
+#src Enable dynamic mode
+#dst Ativar modo dinâmico
+#end
+
+#src Instance name
+#dst Nome da instância
+#end
+#src Use instance index instead of name
+#dst Use o índice da instância em vez do nome
+#end
+
+#src Overlay data sources
+#dst Fontes de dados de sobreposição
+#end
+#src Setup
+#dst Configurar
+#end
+#src Add
+#dst Adicionar
+#end
+#src Remove
+#dst Remover
+#end
+
+#src Ovelay editor
+#dst Editor de Sobreposições
+#end
+
+#src Overlay properties
+#dst Propriedades da sobreposição
+#end
+#src Refresh period, in milliseconds
+#dst Taxa de atualização (ms)
+#end
+#src Master settings
+#dst Configurações principais
+#end
+#src Embedded image
+#dst Imagem incorporada
+#end
+#src Ping address
+#dst Endereço de ping
+#end
+
+#src Ovelay editor
+#dst Editor de sobreposição
+#end
+
+#src Select sprite
+#dst Selecionar imagem animada
+#end
+
+#src Text tables
+#dst Tabelas de texto
+#end
+
+#src Text table properties
+#dst Configurações da tabela de texto
+#end
+#src Value
+#dst Valor
+#end
+#src Units
+#dst Unidades
+#end
+#src Cell size, in percents
+#dst Tamanho da célula (%)
+#end
+#src Cell alignment, in symbols
+#dst Alinhamento da célula (símbolos)
+#end
+#src Table edit mode
+#dst Modo de edição da tabela
+#end
+#src lines
+#dst Linhas
+#end
+#src cells
+#dst Céluas
+#end
+
+#src Text table cell properties
+#dst Propriedades da célula da tabela de texto
+#end
+#src Line name
+#dst Nome da linha
+#end
+#src Use custom line text color
+#dst Usar cor de texto de linha personalizada
+#end
+#src Use custom cell text color
+#dst Usar cor de texto de célula personalizada
+#end
+#src Cell data source
+#dst Fonte de dados da célula
+#end
+#src Cell text
+#dst Texto da célula
+#end
+
+#src Add new text table cells
+#dst Adicionar nova célula da tabela de texto
+#end
+#src Add cells to new line
+#dst Adicionar células à nova linha
+#end
+#src Add separator
+#dst Adicionar separador
+#end

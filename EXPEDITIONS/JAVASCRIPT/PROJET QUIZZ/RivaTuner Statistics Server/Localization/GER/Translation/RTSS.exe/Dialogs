@@ -1,0 +1,109 @@
+#src General
+#dst Allgemein
+#end
+#src General properties
+#dst Allgemeine Eigenschaften
+#end
+#src Start minimized
+#dst Minimiert starten
+#end
+#src Update checking properties
+#dst Eigenschaften der Update Überprüfung 
+#end
+#src Check for available product updates
+#dst Updateüberprüfung
+#end
+#src Check for available product beta versions
+#dst Überprüfung auf verfügbare Beta Versionen
+#end
+#src never
+#dst nie
+#end
+#src on startup
+#dst beim Start
+#end
+#src on startup daily
+#dst täglich
+#end
+#src on startup weekly
+#dst wöchentlich
+#end
+#src on startup monthly
+#dst monatlich
+#end
+#src Check now
+#dst Check jetzt
+#end
+#src FCAT properties
+#dst FCAT Einstellungen
+#end
+#src Enable frame color indicator
+#dst Frame Color Indicator aktivieren
+#end
+#src color sequence
+#dst Farbsequenz
+#end
+#src 2 bars
+#dst
+#end
+#src 3 bars
+#dst
+#end
+#src 4 bars
+#dst
+#end
+#src Compatibility properties
+#dst Kompatibilitäts-Eigenschaften
+#end
+#src Enable dedicated encoder server service
+#dst Dedizierten Encoder-Server-Dienst aktivieren
+#end
+#src 32-bit
+#dst 32-Bit
+#end
+#src 64-bit
+#dst 64-Bit
+#end
+#src Enable 64-bit applications support service
+#dst 64-Bit-Anwendungs-Support-Service aktivieren
+#end
+
+#src User Interface
+#dst Benutzeroberfläche
+#end
+#src User interface help system properties
+#dst Hilfesystem-Einstellungen
+#end
+#src English
+#dst Englisch
+#end
+#src Language
+#dst Sprache
+#end
+#src Show user interface tooltips
+#dst Zeige Tooltips
+#end
+#src User interface skinning properties
+#dst Skin-Eigenschaften
+#end
+#src Skin composition mode
+#dst Skin Composition-Modus
+#end
+#src traditional
+#dst traditionell
+#end
+#src layered with colorkey
+#dst mit Colorkey
+#end
+#src layered with alpha
+#dst mit Alpha Channel
+#end
+#src Skin transparency
+#dst Skin-Transparenz
+#end
+#src Transparent
+#dst transparent
+#end
+#src Opaque
+#dst undurchsichtig
+#end

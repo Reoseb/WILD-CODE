@@ -1,0 +1,15 @@
+body { 
+    background: rgb(70, 214, 70);
+}
+#container { border: 1px solid red;
+    width: 80%;
+    margin: 10px auto;
+}
+nav ul lui {
+list-style: none;
+display: inline;
+}
+nav a{
+    text-decoration: none;
+    text-transform: capitalize;
+}

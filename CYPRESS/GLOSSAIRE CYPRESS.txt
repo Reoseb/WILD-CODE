@@ -1,0 +1,42 @@
+GLOSSAIRE CYPRESS
+
+npm init -y
+npm install cypress --save-dev
+
+//ADMIN 
+npm install cypress -g npm@latest 
+
+"cy:open": "cypress open"
+npm run cy:open
+
+npx cypress open
+
+CACHE
+npx cypress cache clear
+
+
+https://docs.cypress.io/guides/references/assertions
+
+npm install @faker-js/faker --save-dev
+
+support >e2e.js
+Cypress.on ('uncaught:exception', () => {
+    return false;
+});
+
+
+https://www.npmjs.com/package/@faker-js/faker
+
+REPORTING
+npx cypress run
+
+npm install --save-dev cypress-mochawesome-reporter
+
+module.exports = defineConfig({
+  reporter: "cypress-mochawesome-reporter",
+  e2e: {
+    setupNodeEvents(on, config) {
+      require("cypress-mochawesome-reporter/plugin")(on);
+    },
+  },
+});

@@ -1,0 +1,125 @@
+RéoSeb@REOZONDE MINGW64 ~
+
+$ unzip planets.zip
+
+Archive:  planets.zip
+
+   creating: planets/
+
+  inflating: planets/mercury.jpeg
+
+  inflating: planets/earth.jpeg
+
+  inflating: planets/pluto.jpeg
+
+  inflating: planets/arrakis.jpeg
+
+  inflating: planets/jupiter.jpeg
+
+  inflating: planets/venus.jpeg
+
+  inflating: planets/mars.jpeg
+
+  inflating: planets/cybertron.jpeg
+
+  inflating: planets/coruscant.jpeg
+
+  inflating: planets/uranus.jpeg
+
+  inflating: planets/neptune.jpeg
+
+  inflating: planets/saturn.jpeg
+
+
+RéoSeb@REOZONDE MINGW64 ~
+
+$ cd planets
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ mkdir real fictional inhabited
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ mkdir -p real/terrestrial real/gas-giants real/dwarf-planets
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ mv ~/planets/pluto.jpeg real/dwarf-planets
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ mv jupiter.jpeg uranus.jpeg saturn.jpeg neptune.jpeg real/gas-giants
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ mv earth.jpeg mercury.jpeg mars.jpeg venus.jpeg real/terrestrial
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ mv arrakis.jpeg coruscant.jpeg cybertron.jpeg fictional/
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ cp -R fictional/ real/terrestrial/earth.jpeg inhabited/
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ rm -r real/dwarf-planets
+
+
+RéoSeb@REOZONDE MINGW64 ~/planets
+
+$ find
+
+.
+
+./fictional
+
+./fictional/arrakis.jpeg
+
+./fictional/coruscant.jpeg
+
+./fictional/cybertron.jpeg
+
+./inhabited
+
+./inhabited/earth.jpeg
+
+./inhabited/fictional
+
+./inhabited/fictional/arrakis.jpeg
+
+./inhabited/fictional/coruscant.jpeg
+
+./inhabited/fictional/cybertron.jpeg
+
+./real
+
+./real/gas-giants
+
+./real/gas-giants/jupiter.jpeg
+
+./real/gas-giants/neptune.jpeg
+
+./real/gas-giants/saturn.jpeg
+
+./real/gas-giants/uranus.jpeg
+
+./real/terrestrial
+
+./real/terrestrial/earth.jpeg
+
+./real/terrestrial/mars.jpeg
+
+./real/terrestrial/mercury.jpeg
+
+./real/terrestrial/venus.jpeg

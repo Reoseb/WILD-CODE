@@ -1,0 +1,18 @@
+// OverlayEditorInterface.h: interface for the COverlayEditorInterface class.
+//
+// created by Unwinder
+//////////////////////////////////////////////////////////////////////
+#pragma once
+//////////////////////////////////////////////////////////////////////
+typedef void (*POSTOVERLAYMESSAGE)(LPCSTR, LPCSTR, LPCSTR);
+//////////////////////////////////////////////////////////////////////
+class COverlayEditorInterface
+{
+public:
+	COverlayEditorInterface();
+	virtual ~COverlayEditorInterface();
+
+	void PostOverlayMessage(LPCSTR lpMessage, LPCSTR lpLayer, LPCSTR lpParams);
+		//post message to plugin's overlay layout
+};
+//////////////////////////////////////////////////////////////////////

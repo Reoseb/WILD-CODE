@@ -1,0 +1,3 @@
+Dedizierten Encoder-Server-Dienst aktivieren
+Aktiviert den Encoder-Service-Dienst, welcher dedizierte Video Encoding Funktionalität zur %PRODUCTNAME% Videocapture- Engine bietet. Sie können diesen Dienst deaktivieren, wenn Sie keine Videoaufnahme Funktionen nutzen oder den Encoder-Server-Dienst nicht benutzen.
+

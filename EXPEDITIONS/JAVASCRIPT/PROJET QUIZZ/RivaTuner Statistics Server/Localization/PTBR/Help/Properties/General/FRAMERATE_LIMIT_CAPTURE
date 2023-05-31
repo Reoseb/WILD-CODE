@@ -1,0 +1,6 @@
+Limitar taxa de quadros na captura de vídeos
+Permite definir um limite de quadros nas aplicações 3D durante a captura dos vídeos. Limitar a taxa de quadros pode melhorar o resultando do vídeo. A suavidade pode ser melhorada quando a taxa de quadros do jogo for múltipla da taxa de quadros de captura do vídeo, então o limite é definido como um multiplicador da taxa de quadros da captura do vídeo. Por exemplo, definida a proporção em 2, quando a captura do vídeo for 30 FPS irá limitar a taxa de quadros do jogo para 2X30=60 FPS. Defini-la a zero desativa o limite.
+Esta opção é específica, você deve configurá-la de forma independente para cada aplicação.
+
+Sugestões:
+- Você pode desativar sugestões em <Inteface> na aba das propriedades.

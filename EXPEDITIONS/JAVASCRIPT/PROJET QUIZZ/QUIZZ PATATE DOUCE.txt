@@ -1,0 +1,73 @@
+const pays = {
+    france: true,
+    angleterre: false,
+    luxembourg: true,
+    bresil: false
+
+// Capitale Guinée
+
+const capitale = {
+    malabo: false,
+    bissau: false,
+    conakry: true
+}
+
+const reponseBoutton = document.getElementById('bouton01')
+
+reponseBoutton.addEventListener('click',bonneRep());
+
+
+function bonneRep() {
+    
+    const reponseCapitale = document.getElementsByName('capitaleGuinee')
+    let checkedResponse;
+    for (let index = 0; index < reponseCapitale.length; index++) {
+        if(reponseCapitale[index].checked) {
+            checkedResponse = reponseCapitale[index]
+        }
+    }
+
+    if(checkedResponse.value === "conakry"){
+        console.log("Bonne réponse");
+
+const reponseBoutton = document.getElementById('bouton01')
+
+reponseBoutton.addEventListener('click', function() {
+
+    const boutonsRadioCapitale = document.getElementsByName('capitaleGuinee')
+    let reponseGuineeCoche;
+    for(let i=0; i<boutonsRadioCapitale.length; i++) {
+        if(boutonsRadioCapitale[i].checked) {
+            reponseGuineeCoche = boutonsRadioCapitale[i]
+        }
+    }
+    if(reponseGuineeCoche.value === "conakry") {
+        console.log('bonne réponse')
+    } else {
+        console.log('Erroné, gros! écoute ta mère et va l\'école')
+    }
+});
+    }
+    else{
+        console.log("GROS NUL, tu aurais dû écouter ta mère et aller à l'école");
+    }
+}
+
+
+METHODE MOMO
+const reponseBouttonQuestion1 = document.getElementById('bouton01')
+
+reponseBouttonQuestion1.addEventListener('click', function() {
+
+    // Première question
+    const boutonsRadioCapitale = document.getElementsByName('capitaleGuinee')
+    let reponseGuineeCoche;
+    for(let i=0; i<boutonsRadioCapitale.length; i++) {
+        if(boutonsRadioCapitale[i].checked) {
+            reponseGuineeCoche = boutonsRadioCapitale[i]
+        }
+    }
+    if(reponseGuineeCoche.value === "conakry") {
+conso
+
+

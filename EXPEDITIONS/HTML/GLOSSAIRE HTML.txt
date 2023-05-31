@@ -1,0 +1,58 @@
+GLOSSAIRE HTML
+
+<form> : déclarer un formulaire
+
+    L'attribut action définit l'URL ou doivent être envoyé les données
+    L'attribut method définit la méthode utilisée pour envoyé le formulaire (comme "get" ou "post").
+
+<form action="/adoption-demand" method="post">
+
+</form>
+
+l'attribut for du <label> doit correspondre à l'id de l'input (champs de saisie) afin de lier les deux
+
+    <label for="firstname">What's your firstname ?</label>
+
+    <input type="text" id="firstname">
+
+<label>Quel est votre email: <input type="email" required></label>
+<label>Quel est votre date de naissance: <input type="date"></label>
+<label>Nombre de personnes: <input type="number"></label>
+<label>Password: <input type="password"></label>
+
+Multi checkbox
+<fieldset>
+  <legend>Veuillez choisir vos skills :</legend>
+    <input type="checkbox" id="webdev" name="interest" value="coding">
+    <label for="webdev">Developpement Web</label>
+    <br>
+    <input type="checkbox" id="music" name="interest" value="music">
+    <label for="music">Musique</label>
+</fieldset>
+
+Multi radio
+<fieldset>
+    <legend>Quel est votre langage de programmation favori:</legend>
+    <input type="radio" id="javascript" name="favoriteLanguage" value="javascript">
+    <label for="javascript">JavaScript</label>
+    <br>
+    <input type="radio" id="python" name="favoriteLanguage" value="python">
+    <label for="python">Python</label>
+    <br>
+    <input type="radio" id="java" name="favoriteLanguage" value="java">
+    <label for="java">Java</label>
+</fieldset>
+
+Menu Déroulant
+<label for="pet-select">Quel animal voulez vous adopter?</label>
+<select name="pets" id="pet-select">
+    <option value="">--Veuillez choisir une option--</option>
+    <option value="dog">Chien</option>
+    <option value="cat">Chat</option>
+    <option value="hamster">Hamster</option>
+</select>
+
+Corps du message :
+<label>Ecrivez votre message:
+  <textarea id="message" name="message" rows="5" cols="33" maxlength="500" wrap>Tapez votre message ici...</textarea>
+</label>

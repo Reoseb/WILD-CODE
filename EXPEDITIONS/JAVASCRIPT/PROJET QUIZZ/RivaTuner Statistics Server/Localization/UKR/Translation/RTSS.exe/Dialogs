@@ -1,0 +1,112 @@
+#src General
+#dst Основні
+#end
+#src General properties
+#dst Основні властивості
+#end
+#src Start minimized
+#dst Запускати в мінімізованому стані
+#end
+#src Update checking properties
+#dst Властивостi системи пошуку оновлень
+#end
+#src Check for available product updates
+#dst Перевiряти наявнiсть оновлень
+#end
+#src Check for available product beta versions
+#dst Перевiряти наявнiсть бета-версiй
+#end
+#src never
+#dst нiколи
+#end
+#src on startup
+#dst при завантаженнi
+#end
+#src on startup daily
+#dst щоденно
+#end
+#src on startup weekly
+#dst щотижнево
+#end
+#src on startup monthly
+#dst щомiсячно
+#end
+#src Check now
+#dst перевiрити
+#end
+#src FCAT properties
+#dst
+#end
+#src Enable frame color indicator
+#dst
+#end
+#src color sequence
+#dst
+#end
+#src 2 bars
+#dst
+#end
+#src 3 bars
+#dst
+#end
+#src 4 bars
+#dst
+#end
+#src Compatibility properties
+#dst
+#end
+#src Enable dedicated encoder server service
+#dst
+#end
+#src 32-bit
+#dst
+#end
+#src 64-bit
+#dst
+#end
+#src Enable 64-bit applications support service
+#dst
+#end
+
+#src User Interface
+#dst Інтерфейс
+#end
+#src User interface help system properties
+#dst Властивості довідкової системи інтерфейсу користувача
+#end
+#src English
+#dst Англійська
+#end
+#src Language
+#dst Мова
+#end
+#src Show user interface tooltips
+#dst Показувати спливаючі підказки
+#end
+#src User interface skinning properties
+#dst Властивостi оболонок iнтерфейсу користувача
+#end
+#src Skin composition mode
+#dst Режим композицiї оболонок
+#end
+#src traditional
+#dst традицiйний
+#end
+#src layered with colorkey
+#dst шари з кольоровим ключем
+#end
+#src layered with alpha
+#dst шари з альфа каналом
+#end
+#src Skin transparency
+#dst Прозорiсть оболонки
+#end
+#src Transparent
+#dst Прозорий
+#end
+#src Opaque
+#dst Непрозорий
+#end
+#src Skin scaling %d%%
+#dst Масштабування оболонки %d%%
+#end

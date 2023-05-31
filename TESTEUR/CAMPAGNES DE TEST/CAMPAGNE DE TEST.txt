@@ -1,0 +1,14 @@
+CAMPAGNE DE TEST
+1.CAS DE TEST
+ Vérification de Conditions pour obtenir un résultat
+Un SCENARIO comprend plusieurs CAS DE TESTS.
+= Vue macro de la vérif
+>>> EXCEL 
+
+TEST NAME : scénario
+CASE DESCRIPTION :
+STEP : Etapes de vérif
+TEST PLAN : Liste des Cas OBJECTIFS PORTEE 
+TEST LAB : Création de Campagne >> Excecution des Cas
+
+CRITERES D'ACCEPTATION : Complément de la User Story

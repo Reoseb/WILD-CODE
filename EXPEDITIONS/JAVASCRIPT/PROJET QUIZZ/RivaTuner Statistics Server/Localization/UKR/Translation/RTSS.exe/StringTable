@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst Оболонку %s успiшно скомпiльовано!
+#end
+#src %s skin has been successfully decompiled!
+#dst Оболонку %s успiшно декомпiльовано!
+#end 
+#src Failed to decompile %s skin!
+#dst Неможливо декомпiлювати оболонку%s!
+#end
+#src Failed to load %s skin!
+#dst Неможливо завантажити оболонку%s!
+#end 
+#src Failed to compile %s skin!
+#dst Неможливо скомпiлювати оболонку %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Деякi компоненти %PRODUCTNAME% простроченi, вiдсутнi або пошкодженi!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Неможливо завантажити шкуру %s, виконується вiдкат до початкової шкури!
+#end
+#src Unsupported %s skin file format!
+#dst Непiдтримуваний формат файлу шкури %s!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Неможливо iнiцiалiзувати головне вiкно iз шкурою %s, вiдкочуємося до початкової шкури!
+#end
+#src Failed to initialize main window!
+#dst Неможливо iнiцiалiзувати головне вiкно!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst скомпiльовано %d-%m-%Y о %H:%M:%S
+#end
+#src expires on %s
+#dst збiгає %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Неможливо завантажити RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Пiдказка: %PRODUCTNAME% в даний момент згорнуто в системну область панелi завдань. Ви можете клiкнути по його iконцi в  системнiй областi, щоб вiдкрити вiкно %PRODUCTNAME%.
+#end
+#src Failed to restore main window DIB cache!
+#dst Неможливо вiдновити кеш зображень головного вiкна!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst Помилка у функцiї Ctaskschedulerinterface::%s, код помилки %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Властивостi %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Ресурси успiшно скопiйованi у файл %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Неможливо скопiювати ресурси у файл %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst На даний момент оновлення вiдсутнi. Поточна встановлена версiя є актуальною.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s доступний для завантаження. Ви бажаєте зараз вiдкрити сторiнку завантаження?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Неможливо отримати iнформацiю про оновлення з сервера оновлень!
+#end
+#src Cannot establish connection with the update server!
+#dst Неможливо пiдключитися до сервера оновлень!
+#end
+#src cannot open internet connection
+#dst неможливо вiдкрити пiдключення до Internet
+#end
+#src cannot open server connection
+#dst неможливо вiдкрити пiдключення до сервера
+#end
+#src cannot open HTTP request
+#dst неможливо вiдкрити HTTP запит
+#end
+#src cannot send HTTP request
+#dst неможливо вiдправити HTTP запит
+#end
+#src cannot query HTTP info
+#dst неможливо зробити запит на HTTP iнформацiю
+#end
+#src proxy authentification required
+#dst потрiбна аутентифiкацiя проксi сервера
+#end
+#src cannot read file
+#dst неможливо считати файл
+#end
+#src unknown reason %d
+#dst невiдома причина %d
+#end
+#src Reason : %s, error code %d
+#dst Причина : %s, код помилки %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Останнiй пошук оновлень %d-%m-%Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst
+#end

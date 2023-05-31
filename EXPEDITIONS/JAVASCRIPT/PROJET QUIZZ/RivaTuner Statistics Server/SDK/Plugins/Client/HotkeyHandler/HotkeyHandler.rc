@@ -1,0 +1,621 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1251)\r\n"
+    "#include ""res\\HotkeyHandler.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_HOTKEY_HANDLER_DIALOG DIALOGEX 0, 0, 251, 471
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Hotkey handler properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           " On-Screen Display",IDC_OSD_HOTKEYS_PROPERTIES_HEADER,5,5,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Show On-Screen Display",IDC_STATIC,5,28,155,8
+    CONTROL         "",IDC_OSD_ON_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,25,80,14
+    LTEXT           "Hide On-Screen Display",IDC_STATIC,5,48,155,8
+    CONTROL         "",IDC_OSD_OFF_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,45,80,14
+    LTEXT           "Toggle On-Screen Display",IDC_STATIC,5,68,155,8
+    CONTROL         "",IDC_OSD_TOGGLE_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,65,80,14
+    LTEXT           "Overlay editor plugin",IDC_STATIC,5,88,155,8
+    PUSHBUTTON      "Configure",IDC_CONFIGURE_OVERLAY_EDITOR_BUTTON,196,85,50,14
+    LTEXT           " Framerate limiter",IDC_LIMITER_HOTKEYS_PROPERTIES_HEADER,5,105,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Enable framerate limiter",IDC_STATIC,5,129,155,8
+    CONTROL         "",IDC_LIMITER_ON_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,125,80,14
+    LTEXT           "Disable framerate limiter",IDC_STATIC,5,148,155,8
+    CONTROL         "",IDC_LIMITER_OFF_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,145,80,14
+    LTEXT           "Toggle framerate limiter",IDC_STATIC,5,169,155,8
+    CONTROL         "",IDC_LIMITER_TOGGLE_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,165,80,14
+    LTEXT           " Screenshots",IDC_SCREEN_CAPTURE_HOTKEYS_PROPERTIES_HEADER,5,185,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Screen capture",IDC_STATIC,5,209,135,8
+    PUSHBUTTON      "...",IDC_SCREEN_CAPTURE_SETTINGS_BUTTON,145,205,15,14
+    CONTROL         "",IDC_SCREEN_CAPTURE_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,205,80,14
+    LTEXT           " Videos",IDC_VIDEO_CAPTURE_HOTKEYS_PROPERTIES_HEADER,5,225,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Video capture",IDC_STATIC,5,249,135,8
+    PUSHBUTTON      "...",IDC_VIDEO_CAPTURE_SETTINGS_BUTTON,145,245,15,14
+    CONTROL         "",IDC_VIDEO_CAPTURE_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,245,80,14
+    LTEXT           "Video prerecord",IDC_STATIC,5,268,135,8
+    PUSHBUTTON      "...",IDC_PRERECORD_SETTINGS_BUTTON,145,265,15,14
+    CONTROL         "",IDC_VIDEO_PRERECORD_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,265,80,14
+    LTEXT           " Benchmark",IDC_BENCHMARK_HOTKEYS_PROPERTIES_HEADER,5,285,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Begin recording",IDC_STATIC,5,309,135,8
+    PUSHBUTTON      "...",IDC_BENCHMARK_SETTINGS_BUTTON,145,305,15,14
+    CONTROL         "",IDC_BENCHMARK_BEGIN_RECORDING_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,305,80,14
+    LTEXT           "End recording",IDC_STATIC,5,327,135,8
+    CONTROL         "",IDC_BENCHMARK_END_RECORDING_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,325,80,14
+    LTEXT           " Profiles",IDC_PROFILES_HOTKEYS_PROPERTIES_HEADER,5,345,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Programmable profile modifier 1",IDC_PPM1_DESC_CAPTION,5,369,135,8
+    PUSHBUTTON      "...",IDC_PPM1_SETTINGS_BUTTON,145,365,15,14
+    CONTROL         "",IDC_PPM1_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,365,80,14
+    LTEXT           "Programmable profile modifier 2",IDC_PPM2_DESC_CAPTION,5,388,135,8
+    PUSHBUTTON      "...",IDC_PPM2_SETTINGS_BUTTON,145,385,15,14
+    CONTROL         "",IDC_PPM2_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,385,80,14
+    LTEXT           "Programmable profile modifier 3",IDC_PPM3_DESC_CAPTION,5,409,135,8
+    PUSHBUTTON      "...",IDC_PPM3_SETTINGS_BUTTON,145,405,15,14
+    CONTROL         "",IDC_PPM3_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,405,80,14
+    LTEXT           "Programmable profile modifier 4",IDC_PPM4_DESC_CAPTION,5,428,135,8
+    PUSHBUTTON      "...",IDC_PPM4_SETTINGS_BUTTON,145,425,15,14
+    CONTROL         "",IDC_PPM4_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,425,80,14
+    DEFPUSHBUTTON   "OK",IDOK,140,452,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,452,50,14
+END
+
+IDD_SCREEN_CAPTURE_SETTINGS_DIALOG DIALOGEX 0, 0, 250, 130
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Screen capture properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Screenshot format",IDC_STATIC,5,6,65,8
+    CONTROL         "bmp",IDC_BMP_RADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,155,5,29,10
+    CONTROL         "png",IDC_PNG_RADIO,"Button",BS_AUTORADIOBUTTON,185,5,29,10
+    CONTROL         "jpg",IDC_JPG_RADIO,"Button",BS_AUTORADIOBUTTON,215,5,29,10
+    LTEXT           "",IDC_SCREENSHOT_QUALITY_CAPTION,5,23,135,8
+    CONTROL         "",IDC_SCREEN_CAPTURE_QUALITY_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,148,20,97,15
+    LTEXT           "25%",IDC_STATIC,148,35,16,8
+    LTEXT           "100%",IDC_STATIC,225,35,20,8
+    LTEXT           "Screenshots folder",IDC_STATIC,5,47,65,8
+    EDITTEXT        IDC_SCREEN_CAPTURE_FOLDER_EDIT,75,45,170,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_BUTTON,141,65,50,14
+    PUSHBUTTON      "View",IDC_VIEW_BUTTON,195,65,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,6,84,239,1
+    CONTROL         "Show On-Screen Display on captured screenshots and videos",IDC_CAPTURE_OSD_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,90,240,10
+    DEFPUSHBUTTON   "OK",IDOK,141,111,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,111,50,14
+END
+
+IDD_BENCHMARK_SETTINGS_DIALOG DIALOGEX 0, 0, 250, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Benchmark properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Benchmark results file",IDC_STATIC,5,5,70,8
+    EDITTEXT        IDC_BENCHMARK_PATH_EDIT,5,20,185,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_BUTTON,195,20,50,14
+    CONTROL         "Recreate existing benchmark results files",IDC_RECREATE_BENCHMARK_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,40,240,10
+    PUSHBUTTON      "View",IDC_VIEW_BUTTON,195,55,50,14
+    DEFPUSHBUTTON   "OK",IDOK,141,81,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,81,50,14
+END
+
+IDD_VIDEO_CAPTURE_SETTINGS_DIALOG DIALOGEX 0, 0, 251, 415
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Video capture properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           " General",IDC_GENERAL_VIDEO_PROPERTIES_HEADER,5,5,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Video format",IDC_STATIC,5,28,65,8
+    PUSHBUTTON      "...",IDC_VIDEO_FORMAT_SETTINGS_BUTTON,75,24,15,14
+    COMBOBOX        IDC_VIDEO_FORMAT_COMBO,95,25,151,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_VIDEO_QUALITY_CAPTION,5,49,65,8
+    CONTROL         "",IDC_VIDEO_CAPTURE_QUALITY_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,95,46,151,15
+    LTEXT           "25%",IDC_STATIC,95,60,16,8
+    LTEXT           "100%",IDC_STATIC,226,60,20,8
+    LTEXT           "Videos folder",IDC_STATIC,5,73,65,8
+    EDITTEXT        IDC_VIDEO_CAPTURE_FOLDER_EDIT,95,70,151,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_BUTTON,141,90,50,14
+    PUSHBUTTON      "View",IDC_VIEW_BUTTON,196,90,50,14
+    LTEXT           " Video stream",IDC_VIDEO_STREAM_PROPERTIES_HEADER,5,110,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Capture mode",IDC_STATIC,5,133,85,8
+    COMBOBOX        IDC_VIDEO_CAPTURE_MODE_COMBO,95,130,151,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Frame size",IDC_STATIC,5,153,85,8
+    COMBOBOX        IDC_VIDEO_CAPTURE_FRAMESIZE_COMBO,95,150,151,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_VIDEO_FRAMERATE_CAPTION,5,174,85,8
+    CONTROL         "",IDC_VIDEO_CAPTURE_FRAMERATE_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,95,170,151,15
+    LTEXT           "1 FPS",IDC_STATIC,95,185,19,8
+    LTEXT           "120 FPS",IDC_STATIC,219,185,27,8
+    LTEXT           " Audio stream",IDC_AUDIO_STREAM_PROPERTIES_HEADER,5,195,241,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    LTEXT           "Audio source #1",IDC_STATIC,5,215,155,8
+    LTEXT           "Push-To-Talk hotkey",IDC_STATIC,166,215,80,8
+    COMBOBOX        IDC_AUDIO_CAPTURE_SOURCE_TYPE_COMBO,5,230,155,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_PTT_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,230,80,12
+    COMBOBOX        IDC_AUDIO_CAPTURE_SOURCE_COMBO,5,250,241,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Audio source #2",IDC_STATIC,5,270,155,8
+    LTEXT           "Push-To-Talk hotkey",IDC_STATIC,166,270,80,8
+    COMBOBOX        IDC_AUDIO_CAPTURE_SOURCE_TYPE_2_COMBO,5,284,155,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_PTT2_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,284,80,12
+    COMBOBOX        IDC_AUDIO_CAPTURE_2_SOURCE_COMBO,5,305,241,130,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Downmix multichannel audio to stereo",IDC_FORCE_STEREO_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,324,155,10
+    COMBOBOX        IDC_FORCE_STEREO_MODE_COMBO,166,323,80,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Mix multiple audio tracks",IDC_MIX_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,339,155,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,6,353,236,1
+    CONTROL         "Show On-Screen Display on captured screenshots and videos",IDC_CAPTURE_OSD_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,374,241,10
+    DEFPUSHBUTTON   "OK",IDOK,141,396,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,196,396,50,14
+    CONTROL         "Use dedicated encoder server",IDC_USE_ENCODER_SERVER_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,358,241,10
+END
+
+IDD_VIDEO_PRERECORD_SETTINGS_DIALOG DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Video prerecording properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Prerecord buffer location",IDC_STATIC,5,13,190,8
+    COMBOBOX        IDC_PRERECORD_LOCATION_COMBO,200,10,45,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Prerecord buffer time limit, in seconds",IDC_STATIC,5,33,190,8
+    EDITTEXT        IDC_PRERECORD_TIME_LIMIT_EDIT,200,30,45,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_PRERECORD_TIME_LIMIT_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,234,36,11,14
+    LTEXT           "Prerecord buffer size limit, in MB",IDC_STATIC,5,53,190,8
+    EDITTEXT        IDC_PRERECORD_SIZE_LIMIT_EDIT,200,50,45,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_PRERECORD_SIZE_LIMIT_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,234,57,11,14
+    CONTROL         "Enable automatic prerecording mode",IDC_AUTO_PRERECORD_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,70,240,10
+    DEFPUSHBUTTON   "OK",IDOK,141,91,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,91,50,14
+END
+
+IDD_PROFILE_MODIFIER_SETTINGS_DIALOG DIALOGEX 0, 0, 250, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Programmable profile modifier properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Description",IDC_STATIC,5,5,135,8
+    EDITTEXT        IDC_DESC_EDIT,5,20,240,14,ES_AUTOHSCROLL
+    LTEXT           "Preset",IDC_STATIC,5,40,240,8
+    COMBOBOX        IDC_PRESET_COMBO,5,55,240,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,75,240,1
+    LTEXT           "Target profile (leave blank for global)",IDC_STATIC,5,83,135,8
+    EDITTEXT        IDC_PROFILE_EDIT,145,80,100,14,ES_AUTOHSCROLL
+    LTEXT           "Target profile property",IDC_STATIC,5,103,135,8
+    EDITTEXT        IDC_PROPERTY_EDIT,145,99,100,14,ES_AUTOHSCROLL
+    LTEXT           "Modifier type",IDC_STATIC,5,122,135,8
+    COMBOBOX        IDC_TYPE_COMBO,145,120,100,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Modifier value",IDC_STATIC,5,143,135,8
+    EDITTEXT        IDC_VALUE_EDIT,145,139,100,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,141,166,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,166,50,14
+END
+
+IDD_OVERLAY_EDITOR_SETTINGS_DIALOG DIALOGEX 0, 0, 251, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Overlay editor plugin properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Programmable overlay modifier 1",IDC_OVM1_DESC_CAPTION,5,9,135,8
+    PUSHBUTTON      "...",IDC_OVM1_SETTINGS_BUTTON,145,5,15,14
+    CONTROL         "",IDC_OVM1_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,5,80,14
+    LTEXT           "Programmable overlay modifier 2",IDC_OVM2_DESC_CAPTION,5,28,135,8
+    PUSHBUTTON      "...",IDC_OVM2_SETTINGS_BUTTON,145,25,15,14
+    CONTROL         "",IDC_OVM2_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,25,80,14
+    LTEXT           "Programmable overlay modifier 3",IDC_OVM3_DESC_CAPTION,5,48,135,8
+    PUSHBUTTON      "...",IDC_OVM3_SETTINGS_BUTTON,145,45,15,14
+    CONTROL         "",IDC_OVM3_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,45,80,14
+    LTEXT           "Programmable overlay modifier 4",IDC_OVM4_DESC_CAPTION,5,68,135,8
+    PUSHBUTTON      "...",IDC_OVM4_SETTINGS_BUTTON,145,65,15,14
+    CONTROL         "",IDC_OVM4_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,166,65,80,14
+    DEFPUSHBUTTON   "OK",IDOK,140,91,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,91,50,14
+END
+
+IDD_OVERLAY_MODIFIER_SETTINGS_DIALOG DIALOGEX 0, 0, 250, 160
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Programmable overlay modifier properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Description",-1,5,5,135,8
+    EDITTEXT        IDC_DESC_EDIT,5,20,240,14,ES_AUTOHSCROLL
+    LTEXT           "Preset",-1,5,40,240,8
+    COMBOBOX        IDC_PRESET_COMBO,5,55,240,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",-1,"Static",SS_ETCHEDHORZ,5,75,240,1
+    LTEXT           "Overlay message",-1,5,83,135,8
+    EDITTEXT        IDC_MESSAGE_EDIT,145,80,100,14,ES_AUTOHSCROLL
+    LTEXT           "Overlay layer",-1,5,103,135,8
+    EDITTEXT        IDC_LAYER_EDIT,145,99,100,14,ES_AUTOHSCROLL
+    LTEXT           "Parameters",-1,5,122,135,8
+    EDITTEXT        IDC_PARAMS_EDIT,145,119,100,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,141,141,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,141,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_HOTKEY_HANDLER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 246
+        VERTGUIDE, 140
+        VERTGUIDE, 145
+        VERTGUIDE, 160
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 466
+        HORZGUIDE, 25
+        HORZGUIDE, 32
+        HORZGUIDE, 52
+        HORZGUIDE, 72
+        HORZGUIDE, 85
+        HORZGUIDE, 105
+        HORZGUIDE, 185
+        HORZGUIDE, 225
+        HORZGUIDE, 285
+        HORZGUIDE, 345
+    END
+
+    IDD_SCREEN_CAPTURE_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 245
+        VERTGUIDE, 70
+        VERTGUIDE, 75
+        VERTGUIDE, 140
+        VERTGUIDE, 148
+        VERTGUIDE, 185
+        VERTGUIDE, 215
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 125
+        HORZGUIDE, 10
+        HORZGUIDE, 20
+        HORZGUIDE, 27
+        HORZGUIDE, 35
+        HORZGUIDE, 45
+        HORZGUIDE, 52
+        HORZGUIDE, 65
+        HORZGUIDE, 85
+        HORZGUIDE, 90
+    END
+
+    IDD_BENCHMARK_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 245
+        VERTGUIDE, 190
+        VERTGUIDE, 195
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 95
+        HORZGUIDE, 20
+        HORZGUIDE, 40
+        HORZGUIDE, 55
+    END
+
+    IDD_VIDEO_CAPTURE_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 246
+        VERTGUIDE, 70
+        VERTGUIDE, 75
+        VERTGUIDE, 90
+        VERTGUIDE, 95
+        VERTGUIDE, 140
+        VERTGUIDE, 148
+        VERTGUIDE, 160
+        VERTGUIDE, 166
+        VERTGUIDE, 185
+        VERTGUIDE, 215
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 410
+        HORZGUIDE, 12
+        HORZGUIDE, 25
+        HORZGUIDE, 110
+        HORZGUIDE, 130
+        HORZGUIDE, 150
+    END
+
+    IDD_VIDEO_PRERECORD_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 245
+        VERTGUIDE, 160
+        VERTGUIDE, 165
+        VERTGUIDE, 195
+        VERTGUIDE, 200
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 105
+        HORZGUIDE, 10
+        HORZGUIDE, 17
+        HORZGUIDE, 30
+        HORZGUIDE, 37
+        HORZGUIDE, 50
+        HORZGUIDE, 57
+        HORZGUIDE, 70
+    END
+
+    IDD_PROFILE_MODIFIER_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 245
+        VERTGUIDE, 140
+        VERTGUIDE, 145
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 180
+        HORZGUIDE, 20
+        HORZGUIDE, 40
+        HORZGUIDE, 75
+    END
+
+    IDD_OVERLAY_EDITOR_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 246
+        VERTGUIDE, 140
+        VERTGUIDE, 145
+        VERTGUIDE, 160
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 105
+    END
+
+    IDD_OVERLAY_MODIFIER_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 245
+        VERTGUIDE, 140
+        VERTGUIDE, 145
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 155
+        HORZGUIDE, 20
+        HORZGUIDE, 40
+        HORZGUIDE, 75
+        HORZGUIDE, 126
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIDEO_CAPTURE_SETTINGS_DIALOG DLGINIT
+BEGIN
+    IDC_VIDEO_CAPTURE_MODE_COMBO, 0x403, 6, 0
+0x696d, 0x6578, 0x0064, 
+    IDC_VIDEO_CAPTURE_MODE_COMBO, 0x403, 8, 0
+0x6564, 0x6b73, 0x6f74, 0x0070, 
+    IDC_VIDEO_CAPTURE_MODE_COMBO, 0x403, 15, 0
+0x4433, 0x6120, 0x7070, 0x696c, 0x6163, 0x6974, 0x6e6f, "\000" 
+    IDC_VIDEO_CAPTURE_FRAMESIZE_COMBO, 0x403, 11, 0
+0x7566, 0x6c6c, 0x6620, 0x6172, 0x656d, "\000" 
+    IDC_VIDEO_CAPTURE_FRAMESIZE_COMBO, 0x403, 10, 0
+0x2f31, 0x2032, 0x7266, 0x6d61, 0x0065, 
+    IDC_VIDEO_CAPTURE_FRAMESIZE_COMBO, 0x403, 10, 0
+0x2f31, 0x2033, 0x7266, 0x6d61, 0x0065, 
+    IDC_VIDEO_CAPTURE_FRAMESIZE_COMBO, 0x403, 10, 0
+0x2f31, 0x2034, 0x7266, 0x6d61, 0x0065, 
+    IDC_AUDIO_CAPTURE_SOURCE_TYPE_COMBO, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_AUDIO_CAPTURE_SOURCE_TYPE_COMBO, 0x403, 12, 0
+0x7541, 0x6f74, 0x7320, 0x6c65, 0x6365, 0x0074, 
+    IDC_AUDIO_CAPTURE_SOURCE_TYPE_COMBO, 0x403, 27, 0
+0x6944, 0x6572, 0x7463, 0x6f53, 0x6e75, 0x2064, 0x6163, 0x7470, 0x7275, 
+0x2065, 0x6564, 0x6976, 0x6563, "\000" 
+    IDC_AUDIO_CAPTURE_SOURCE_TYPE_2_COMBO, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_AUDIO_CAPTURE_SOURCE_TYPE_2_COMBO, 0x403, 12, 0
+0x7541, 0x6f74, 0x7320, 0x6c65, 0x6365, 0x0074, 
+    IDC_AUDIO_CAPTURE_SOURCE_TYPE_2_COMBO, 0x403, 27, 0
+0x6944, 0x6572, 0x7463, 0x6f53, 0x6e75, 0x2064, 0x6163, 0x7470, 0x7275, 
+0x2065, 0x6564, 0x6976, 0x6563, "\000" 
+    IDC_FORCE_STEREO_MODE_COMBO, 0x403, 11, 0
+0x7473, 0x7265, 0x6f65, 0x7220, 0x7069, "\000" 
+    IDC_FORCE_STEREO_MODE_COMBO, 0x403, 11, 0
+0x7473, 0x7265, 0x6f65, 0x6d20, 0x7869, "\000" 
+    0
+END
+
+IDD_VIDEO_PRERECORD_SETTINGS_DIALOG DLGINIT
+BEGIN
+    IDC_PRERECORD_LOCATION_COMBO, 0x403, 5, 0
+0x6966, 0x656c, "\000" 
+    IDC_PRERECORD_LOCATION_COMBO, 0x403, 4, 0
+0x4152, 0x004d, 
+    0
+END
+
+IDD_PROFILE_MODIFIER_SETTINGS_DIALOG DLGINIT
+BEGIN
+    IDC_PRESET_COMBO, 0x403, 7, 0
+0x7563, 0x7473, 0x6d6f, "\000" 
+    IDC_PRESET_COMBO, 0x403, 27, 0
+0x6553, 0x2074, 0x3036, 0x4620, 0x5350, 0x6620, 0x6172, 0x656d, 0x6172, 
+0x6574, 0x6c20, 0x6d69, 0x7469, "\000" 
+    IDC_PRESET_COMBO, 0x403, 25, 0
+0x6e49, 0x7263, 0x6165, 0x6573, 0x6620, 0x6172, 0x656d, 0x6172, 0x6574, 
+0x6c20, 0x6d69, 0x7469, "\000" 
+    IDC_PRESET_COMBO, 0x403, 25, 0
+0x6544, 0x7263, 0x6165, 0x6573, 0x6620, 0x6172, 0x656d, 0x6172, 0x6574, 
+0x6c20, 0x6d69, 0x7469, "\000" 
+    IDC_PRESET_COMBO, 0x403, 29, 0
+0x6e49, 0x7263, 0x6165, 0x6573, 0x5320, 0x6163, 0x6c6e, 0x6e69, 0x2065, 
+0x7953, 0x636e, 0x6920, 0x646e, 0x7865, "\000" 
+    IDC_PRESET_COMBO, 0x403, 29, 0
+0x6544, 0x7263, 0x6165, 0x6573, 0x5320, 0x6163, 0x6c6e, 0x6e69, 0x2065, 
+0x7953, 0x636e, 0x6920, 0x646e, 0x7865, "\000" 
+    IDC_TYPE_COMBO, 0x403, 4, 0
+0x6573, 0x0074, 
+    IDC_TYPE_COMBO, 0x403, 4, 0
+0x6461, 0x0064, 
+    0
+END
+
+IDD_OVERLAY_MODIFIER_SETTINGS_DIALOG DLGINIT
+BEGIN
+    IDC_PRESET_COMBO, 0x403, 7, 0
+0x7563, 0x7473, 0x6d6f, "\000" 
+    IDC_PRESET_COMBO, 0x403, 13, 0
+0x6f4c, 0x6461, 0x6f20, 0x6576, 0x6c72, 0x7961, "\000" 
+    IDC_PRESET_COMBO, 0x403, 15, 0
+0x6f4c, 0x6461, 0x7420, 0x7865, 0x2074, 0x6966, 0x656c, "\000" 
+    IDC_PRESET_COMBO, 0x403, 15, 0
+0x6956, 0x7765, 0x7420, 0x7865, 0x2074, 0x6966, 0x656c, "\000" 
+    IDC_PRESET_COMBO, 0x403, 28, 0
+0x6f4d, 0x6576, 0x7420, 0x206f, 0x656e, 0x7478, 0x7420, 0x7865, 0x2074, 
+0x6966, 0x656c, 0x6c20, 0x6e69, 0x0065, 
+    IDC_PRESET_COMBO, 0x403, 32, 0
+0x6f4d, 0x6576, 0x7420, 0x206f, 0x7270, 0x7665, 0x6f69, 0x7375, 0x7420, 
+0x7865, 0x2074, 0x6966, 0x656c, 0x6c20, 0x6e69, 0x0065, 
+    IDC_PRESET_COMBO, 0x403, 24, 0
+0x6553, 0x2074, 0x6974, 0x656d, 0x2072, 0x6f74, 0x3320, 0x2030, 0x6573, 
+0x6f63, 0x646e, 0x0073, 
+    IDC_PRESET_COMBO, 0x403, 17, 0
+0x6553, 0x2074, 0x6970, 0x676e, 0x6120, 0x6464, 0x6572, 0x7373, "\000" 
+    0
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,0,0
+ PRODUCTVERSION 1,4,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "FileDescription", "Hotkey handler client plugin for RivaTuner Statistics Server"
+            VALUE "FileVersion", "1, 4, 0, 0"
+            VALUE "InternalName", "HotkeyHandler.dll"
+            VALUE "LegalCopyright", "Copyright © 2020-2021 by Alexey Nicolaychuk aka Unwinder"
+            VALUE "OriginalFilename", "HotkeyHandler.dll"
+            VALUE "ProductName", "HotkeyHandler Dynamic Link Library"
+            VALUE "ProductVersion", "1, 4, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1251)
+#include "res\HotkeyHandler.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

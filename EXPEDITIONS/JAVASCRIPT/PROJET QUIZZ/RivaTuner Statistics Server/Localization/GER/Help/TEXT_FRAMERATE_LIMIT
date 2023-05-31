@@ -1,0 +1,6 @@
+Framerate-Limit
+Erlaubt das Definieren von Framerate-Limits für 3D-Anwendungen. Die Framerate während des Spielens zu reduzieren, kann dabei helfen, den Energieverbrauch zu reduzieren und das Spielerlebnis zu verbessern, da Mikroruckler durch Verhinderung von Framerate-Schwankungen reduziert werden. Setzen Sie das Limit auf 0, um es zu deaktivieren.
+
+Hinweise:
+- Es wird stark empfohlen VSync zu deaktivieren, damit die Framerate-Limitierung richtig funktioniert.
+- Sie können die Tooltips über den <Benutzeroberfläche>-Tab in den erweiterten Einstellungen deaktivieren.

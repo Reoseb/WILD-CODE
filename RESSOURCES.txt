@@ -1,0 +1,29 @@
+https://github.com/JustFS/cours-github/blob/master/versionner.png
+https://github.com/JustFS/cours-github/blob/team_work/travailler_en_equipe.png
+
+BDD TDD
+https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site/4270561-pourquoi-ecrire-des-tests
+
+
+GITHUB
+https://youtu.be/eXF0epLeCgo
+
+
+GIT 5
+Auto-merging README.md
+
+CONFLICT (content): Merge conflict in README.md
+
+Already up to date.
+
+POSTMAN
+https://www.postman.com/webinars/continuous-testing/
+
+TESTING
+https://testsigma.com/blog/test-case-vs-test-scenario/
+
+UNIX CHAINES CHAR
+https://www.thegeekstuff.com/2011/10/grep-or-and-not-operators/
+
+
+
